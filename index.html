@@ -912,9 +912,11 @@ document.querySelectorAll('[data-set-lang]').forEach(btn=>{
 const slides=[...document.querySelectorAll('.slide')];
 let cur=0;
 function fit(){
-  const gutter=88;
-  const s=Math.min((innerWidth-gutter)/1280,innerHeight/720);
-  const x=(innerWidth-gutter-1280*s)/2;
+  const dock=document.getElementById('langDock');
+  const dockLeft=dock?dock.getBoundingClientRect().left:innerWidth-80;
+  const reserve=Math.max(8,innerWidth-dockLeft+6);
+  const s=Math.min((innerWidth-reserve)/1280,innerHeight/720);
+  const x=Math.max(0,innerWidth-reserve-1280*s);
   const y=(innerHeight-720*s)/2;
   slides.forEach(sl=>sl.style.transform=`translate(${x}px,${y}px) scale(${s})`);
 }
