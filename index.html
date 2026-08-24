@@ -79,14 +79,17 @@
   #prev,#next{
     position:fixed;top:50%;transform:translateY(-50%);z-index:50;
     background:#12181f;border:1px solid rgba(255,255,255,.25);color:#fff;
-    width:34px;height:34px;border-radius:9px;font-size:15px;cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,.35);
+    width:36px;height:56px;padding:0;margin:0;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35);
   }
-  #prev{left:max(10px,env(safe-area-inset-left,0px))}
-  #next{right:max(10px,env(safe-area-inset-right,0px))}
+  #prev{left:0;border-radius:0 10px 10px 0;border-left:none}
+  #next{right:0;border-radius:10px 0 0 10px;border-right:none}
   #prev:hover,#next:hover{background:var(--red);border-color:var(--red)}
+  #prev svg,#next svg{width:16px;height:16px;display:block}
   @media (max-width:720px){
-    #prev,#next{width:30px;height:30px;font-size:14px}
+    #prev,#next{width:30px;height:48px}
+    #prev svg,#next svg{width:14px;height:14px}
   }
   #bar{position:fixed;top:0;left:0;height:4px;background:var(--red);z-index:60;transition:width .3s ease}
 
@@ -673,8 +676,12 @@
 
 </div>
 
-<button id="prev" title="Previous">←</button>
-<button id="next" title="Next">→</button>
+<button id="prev" title="Previous" aria-label="Previous">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<button id="next" title="Next" aria-label="Next">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 <script>
 /* ---------- i18n ---------- */
@@ -912,8 +919,12 @@ function applyLang(lang){
     btn.classList.toggle('is-on',on);
     btn.setAttribute('aria-pressed',on?'true':'false');
   });
-  document.getElementById('prev').title=bg?'Назад':'Previous';
-  document.getElementById('next').title=bg?'Напред':'Next';
+  const prevLbl=bg?'Назад':'Previous';
+  const nextLbl=bg?'Напред':'Next';
+  const prevBtn=document.getElementById('prev');
+  const nextBtn=document.getElementById('next');
+  prevBtn.title=prevLbl; prevBtn.setAttribute('aria-label',prevLbl);
+  nextBtn.title=nextLbl; nextBtn.setAttribute('aria-label',nextLbl);
   try{localStorage.setItem('kaufland-deck-lang',lang);}catch(e){/* ignore */}
   const url=new URL(location.href);
   if(bg) url.searchParams.set('lang','bg'); else url.searchParams.delete('lang');
