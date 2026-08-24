@@ -28,7 +28,7 @@
   .slide{
     width:1280px;height:720px;position:absolute;top:0;left:0;
     background:var(--bg);color:var(--ink);
-    padding:56px 72px 64px;
+    padding:56px 88px 64px;
     opacity:0;visibility:hidden;transition:opacity .35s ease;
     transform-origin:top left;
     display:flex;flex-direction:column;
@@ -58,9 +58,9 @@
   .good{color:var(--green)}
   .warn{color:var(--amber)}
 
-  .src{position:absolute;bottom:26px;left:72px;right:220px;font-size:10.5px;color:#98a1ad;line-height:1.4}
+  .src{position:absolute;bottom:26px;left:88px;right:220px;font-size:10.5px;color:#98a1ad;line-height:1.4}
   .dark .src{color:#6b7480}
-  .pageno{position:absolute;bottom:24px;right:72px;font-size:12px;font-weight:700;color:#98a1ad}
+  .pageno{position:absolute;bottom:24px;right:88px;font-size:12px;font-weight:700;color:#98a1ad}
 
   .tbl{width:100%;border-collapse:collapse;font-size:13.5px}
   .tbl th{background:var(--ink);color:#fff;text-align:left;padding:9px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
@@ -76,11 +76,17 @@
   .pill.blue{background:#e8f0fb;color:var(--blue)}
 
   /* nav */
-  #nav{position:fixed;top:50%;right:max(8px,env(safe-area-inset-right,0px));transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;align-items:center;z-index:50;pointer-events:none}
-  #nav button{pointer-events:auto;background:#12181f;border:1px solid rgba(255,255,255,.25);color:#fff;width:34px;height:34px;border-radius:9px;font-size:15px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35)}
-  #nav button:hover{background:var(--red);border-color:var(--red)}
+  #prev,#next{
+    position:fixed;top:50%;transform:translateY(-50%);z-index:50;
+    background:#12181f;border:1px solid rgba(255,255,255,.25);color:#fff;
+    width:34px;height:34px;border-radius:9px;font-size:15px;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.35);
+  }
+  #prev{left:max(10px,env(safe-area-inset-left,0px))}
+  #next{right:max(10px,env(safe-area-inset-right,0px))}
+  #prev:hover,#next:hover{background:var(--red);border-color:var(--red)}
   @media (max-width:720px){
-    #nav button{width:30px;height:30px;font-size:14px}
+    #prev,#next{width:30px;height:30px;font-size:14px}
   }
   #bar{position:fixed;top:0;left:0;height:4px;background:var(--red);z-index:60;transition:width .3s ease}
 
@@ -129,20 +135,15 @@
 
   kbd{background:#eef1f4;border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:11px;font-family:inherit;font-weight:700}
 
-  .lang-seg{display:inline-flex;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.22);border-radius:999px;padding:3px}
+  .title-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+  .lang-seg{display:inline-flex;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.22);border-radius:999px;padding:3px;flex:0 0 auto}
   .lang-seg button{
     border:0;background:transparent;color:#c5ced8;cursor:pointer;
     font-family:inherit;font-weight:800;font-size:13px;letter-spacing:.08em;
     padding:8px 16px;border-radius:999px;line-height:1;
   }
-  .lang-seg button.is-on{background:#fff;color:#12181f}
+  .lang-seg button.is-on{background:var(--red);color:#fff}
   .lang-seg button:focus-visible{outline:2px solid #ff5a63;outline-offset:2px}
-  #langDock{
-    position:fixed;top:14px;right:max(8px,env(safe-area-inset-right,0px));z-index:50;
-  }
-  #langDock .lang-seg{background:#12181f;border-color:rgba(255,255,255,.25);box-shadow:0 2px 8px rgba(0,0,0,.35)}
-  #langDock .lang-seg button{color:#fff;padding:6px 11px;font-size:12px}
-  #langDock .lang-seg button.is-on{background:var(--red);color:#fff;border-color:var(--red)}
 </style>
 </head>
 <body>
@@ -152,6 +153,7 @@
 <!-- ═══════════════ 1 · TITLE ═══════════════ -->
 <section class="slide dark">
   <div class="title-wrap">
+    <div class="title-top">
     <div class="logo-k">
       <svg class="kl-logo" viewBox="0 0 346.317 99.212" role="img" aria-label="Kaufland">
         <g fill="#e3000f">
@@ -164,6 +166,11 @@
         </g>
       </svg>
       <span class="kl-country" data-i18n="s1_country">Bulgaria</span>
+    </div>
+      <div class="lang-seg" role="group" aria-label="EN / BG">
+        <button type="button" data-set-lang="en" class="is-on" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="bg" aria-pressed="false">БГ</button>
+      </div>
     </div>
     <div class="kicker" data-i18n="s1_kicker">Commercial proposal · Confidential</div>
     <h1 data-i18n-html="s1_h1">The Kaufland Meal Deal.<br><span style="color:#ff5a63">One price. Three zones. A new daily mission.</span></h1>
@@ -662,16 +669,8 @@
 
 </div>
 
-<div id="langDock">
-  <div class="lang-seg" role="group" aria-label="EN / BG">
-    <button type="button" data-set-lang="en" class="is-on" aria-pressed="true">EN</button>
-    <button type="button" data-set-lang="bg" aria-pressed="false">БГ</button>
-  </div>
-</div>
-<div id="nav">
-  <button id="prev" title="Previous">←</button>
-  <button id="next" title="Next">→</button>
-</div>
+<button id="prev" title="Previous">←</button>
+<button id="next" title="Next">→</button>
 
 <script>
 /* ---------- i18n ---------- */
@@ -925,13 +924,9 @@ document.querySelectorAll('[data-set-lang]').forEach(btn=>{
 const slides=[...document.querySelectorAll('.slide')];
 let cur=0;
 function fit(){
-  const dock=document.getElementById('langDock');
-  const dockLeft=dock?dock.getBoundingClientRect().left:innerWidth-80;
-  const reserve=Math.max(8,innerWidth-dockLeft+6);
-  const s=Math.min((innerWidth-reserve)/1280,innerHeight/720);
-  const x=Math.max(0,innerWidth-reserve-1280*s);
+  const s=innerWidth/1280;
   const y=(innerHeight-720*s)/2;
-  slides.forEach(sl=>sl.style.transform=`translate(${x}px,${y}px) scale(${s})`);
+  slides.forEach(sl=>sl.style.transform=`translate(0px,${y}px) scale(${s})`);
 }
 function show(i){
   cur=Math.max(0,Math.min(slides.length-1,i));
