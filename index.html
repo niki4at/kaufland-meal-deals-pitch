@@ -24,13 +24,13 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%;overflow:hidden;background:#0d1117;font-family:'Inter',system-ui,sans-serif}
-  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #stage{position:fixed;inset:0}
   .slide{
-    width:1280px;height:720px;position:absolute;
+    width:1280px;height:720px;position:absolute;top:0;left:0;
     background:var(--bg);color:var(--ink);
     padding:56px 72px 64px;
     opacity:0;visibility:hidden;transition:opacity .35s ease;
-    transform-origin:center center;
+    transform-origin:top left;
     display:flex;flex-direction:column;
   }
   .slide.active{opacity:1;visibility:visible}
@@ -76,9 +76,12 @@
   .pill.blue{background:#e8f0fb;color:var(--blue)}
 
   /* nav */
-  #nav{position:fixed;top:50%;right:12px;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;align-items:center;z-index:50}
-  #nav button{background:#12181f;border:1px solid rgba(255,255,255,.25);color:#fff;width:34px;height:34px;border-radius:9px;font-size:15px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+  #nav{position:fixed;top:50%;right:max(8px,env(safe-area-inset-right,0px));transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;align-items:center;z-index:50;pointer-events:none}
+  #nav button{pointer-events:auto;background:#12181f;border:1px solid rgba(255,255,255,.25);color:#fff;width:34px;height:34px;border-radius:9px;font-size:15px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35)}
   #nav button:hover{background:var(--red);border-color:var(--red)}
+  @media (max-width:720px){
+    #nav button{width:30px;height:30px;font-size:14px}
+  }
   #bar{position:fixed;top:0;left:0;height:4px;background:var(--red);z-index:60;transition:width .3s ease}
 
   /* title slide */
@@ -926,8 +929,11 @@ document.querySelectorAll('[data-set-lang]').forEach(btn=>{
 const slides=[...document.querySelectorAll('.slide')];
 let cur=0;
 function fit(){
-  const s=Math.min(innerWidth/1280,innerHeight/720);
-  slides.forEach(sl=>sl.style.transform=`scale(${s})`);
+  const gutter=56;
+  const s=Math.min((innerWidth-gutter)/1280,innerHeight/720);
+  const x=(innerWidth-gutter-1280*s)/2;
+  const y=(innerHeight-720*s)/2;
+  slides.forEach(sl=>sl.style.transform=`translate(${x}px,${y}px) scale(${s})`);
 }
 function show(i){
   cur=Math.max(0,Math.min(slides.length-1,i));
