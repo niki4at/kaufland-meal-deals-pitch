@@ -125,6 +125,27 @@
   .callout b{color:var(--red)}
 
   kbd{background:#eef1f4;border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:11px;font-family:inherit;font-weight:700}
+
+  .title-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+  .lang-hero{display:flex;align-items:center;gap:12px;margin-bottom:36px}
+  .lang-hero-label{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9aa4b1;white-space:nowrap}
+  .lang-seg{display:inline-flex;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.22);border-radius:999px;padding:3px}
+  .lang-seg button{
+    border:0;background:transparent;color:#c5ced8;cursor:pointer;
+    font-family:inherit;font-weight:800;font-size:13px;letter-spacing:.08em;
+    padding:8px 16px;border-radius:999px;line-height:1;
+  }
+  .lang-seg button.is-on{background:#fff;color:#12181f}
+  .lang-seg button:focus-visible{outline:2px solid #ff5a63;outline-offset:2px}
+  #langDock{
+    position:fixed;top:14px;left:14px;z-index:50;
+    display:flex;align-items:center;gap:8px;
+  }
+  #langDock[hidden]{display:none}
+  #langDock .lang-dock-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#9aa4b1}
+  #langDock .lang-seg{background:#12181f;border-color:rgba(255,255,255,.25);box-shadow:0 2px 8px rgba(0,0,0,.35)}
+  #langDock .lang-seg button{color:#fff;padding:6px 12px;font-size:12px}
+  #langDock .lang-seg button.is-on{background:var(--red);color:#fff;border-color:var(--red)}
 </style>
 </head>
 <body>
@@ -134,510 +155,772 @@
 <!-- ═══════════════ 1 · TITLE ═══════════════ -->
 <section class="slide dark">
   <div class="title-wrap">
-    <div class="logo-k"><div class="k">K</div><span>Kaufland България</span></div>
-    <div class="kicker">Commercial proposal · Confidential</div>
-    <h1>The Kaufland Meal Deal.<br><span style="color:#ff5a63">One price. Three zones. A new daily mission.</span></h1>
-    <p style="font-size:19px;color:#b9c1cc;margin-top:22px;max-width:820px;line-height:1.5">
+    <div class="title-top">
+      <div class="logo-k"><div class="k">K</div><span>Kaufland България</span></div>
+      <div class="lang-hero">
+        <span class="lang-hero-label" data-i18n="lang_label">Language</span>
+        <div class="lang-seg" role="group" aria-label="Language">
+          <button type="button" data-set-lang="en" class="is-on" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="bg" aria-pressed="false">БГ</button>
+        </div>
+      </div>
+    </div>
+    <div class="kicker" data-i18n="s1_kicker">Commercial proposal · Confidential</div>
+    <h1 data-i18n-html="s1_h1">The Kaufland Meal Deal.<br><span style="color:#ff5a63">One price. Three zones. A new daily mission.</span></h1>
+    <p style="font-size:19px;color:#b9c1cc;margin-top:22px;max-width:820px;line-height:1.5" data-i18n="s1_lead">
       Bundling the ToGo counter, the in-store bakery and the drinks aisle into a single fixed-price
       lunch offer, run entirely on the existing SAP promotion stack, with zero new SKUs.
     </p>
     <div class="title-meta">
-      <div><b>Prepared for</b>Stephan Lüger · Commercial Director,<br>Member of the Management Board</div>
-      <div><b>Scope</b>71 hypermarkets · 35 cities<br>~1.5M customers weekly</div>
-      <div><b>Base-case Year 1</b>€8.3M revenue · €2.8M gross profit<br>12-week pilot before rollout</div>
+      <div><b data-i18n="s1_for">Prepared for</b><span data-i18n-html="s1_for_val">Stephan Lüger · Commercial Director,<br>Member of the Management Board</span></div>
+      <div><b data-i18n="s1_scope">Scope</b><span data-i18n-html="s1_scope_val">71 hypermarkets · 35 cities<br>~1.5M customers weekly</span></div>
+      <div><b data-i18n="s1_base">Base-case Year 1</b><span data-i18n-html="s1_base_val">€8.3M revenue · €2.8M gross profit<br>12-week pilot before rollout</span></div>
     </div>
   </div>
-  <div class="src">Navigate with <span style="color:#9aa4b1">←  →</span> arrow keys. All monetary figures in EUR unless stated. Sources cited per slide.</div>
+  <div class="src" data-i18n-html="s1_src">Navigate with <span style="color:#9aa4b1">←  →</span> arrow keys. All monetary figures in EUR unless stated. Sources cited per slide.</div>
   <div class="pageno">1 / 14</div>
 </section>
 
 <!-- ═══════════════ 2 · EXEC SUMMARY ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Executive summary</div>
-  <h2>The proposal in four numbers</h2>
-  <p class="sub">Main from the ToGo counter + bakery item + drink = <b>€4.49</b>, or <b>€3.99</b> with Kaufland Card XTRA.</p>
+  <div class="kicker" data-i18n="s2_kicker">Executive summary</div>
+  <h2 data-i18n="s2_h2">The proposal in four numbers</h2>
+  <p class="sub" data-i18n-html="s2_sub">Main from the ToGo counter + bakery item + drink = <b>€4.49</b>, or <b>€3.99</b> with Kaufland Card XTRA.</p>
   <div class="body grid cols-4">
     <div class="card">
-      <h3>Year-1 revenue, base case</h3>
+      <h3 data-i18n="s2_c1_h">Year-1 revenue, base case</h3>
       <div class="big">€8.3<small>M</small></div>
-      <p>100 deals per store per day after national rollout in month 4. Steady state: €10.7M per year.</p>
+      <p data-i18n="s2_c1_p">100 deals per store per day after national rollout in month 4. Steady state: €10.7M per year.</p>
     </div>
     <div class="card">
-      <h3>Gross margin per deal</h3>
+      <h3 data-i18n="s2_c2_h">Gross margin per deal</h3>
       <div class="big good">33%</div>
-      <p>€1.39 gross profit on a €4.19 average ticket, after supplier co-funding of €0.30 on branded drinks.</p>
+      <p data-i18n="s2_c2_p">€1.39 gross profit on a €4.19 average ticket, after supplier co-funding of €0.30 on branded drinks.</p>
     </div>
     <div class="card">
-      <h3>New SKUs required</h3>
+      <h3 data-i18n="s2_c3_h">New SKUs required</h3>
       <div class="big accent">0</div>
-      <p>Runs as a Mix-and-Match Bonus Buy in SAP Retail. Components keep their EANs, stock and category P&L.</p>
+      <p data-i18n="s2_c3_p">Runs as a Mix-and-Match Bonus Buy in SAP Retail. Components keep their EANs, stock and category P&L.</p>
     </div>
     <div class="card">
-      <h3>Time to pilot</h3>
-      <div class="big">8<small> weeks</small></div>
-      <p>Configuration and content only, no custom development. 8-store Sofia pilot, 12 weeks, hard KPI gates.</p>
+      <h3 data-i18n="s2_c4_h">Time to pilot</h3>
+      <div class="big">8<small data-i18n="s2_weeks"> weeks</small></div>
+      <p data-i18n="s2_c4_p">Configuration and content only, no custom development. 8-store Sofia pilot, 12 weeks, hard KPI gates.</p>
     </div>
   </div>
-  <div class="callout" style="margin-top:16px">
+  <div class="callout" style="margin-top:16px" data-i18n-html="s2_callout">
     <b>Why this matters now:</b> Lidl passed Kaufland in Bulgarian revenue in 2024 after 13 years of Kaufland leadership.
     We will not win by opening stores faster. We win by monetising a mission Lidl's format cannot serve:
     the weekday lunch, using assets we already operate in every store.
   </div>
-  <div class="src">Revenue race: Coface turnover analysis 2024 via Mediapool; Capital weekly. Deal economics: this proposal, assumptions on slide 9.</div>
+  <div class="src" data-i18n="s2_src">Revenue race: Coface turnover analysis 2024 via Mediapool; Capital weekly. Deal economics: this proposal, assumptions on slide 9.</div>
   <div class="pageno">2 / 14</div>
 </section>
 
 <!-- ═══════════════ 3 · WHY NOW ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Market context</div>
-  <h2>2024: Lidl took the #1 spot. Our answer is revenue per store, not store count.</h2>
-  <p class="sub">Kaufland cannot match Lidl's opening pace (71 vs ~134 stores). Kaufland already out-earns Lidl per store by ~1.9x; the growth lever is extracting more per visit and more visits per week.</p>
+  <div class="kicker" data-i18n="s3_kicker">Market context</div>
+  <h2 data-i18n="s3_h2">2024: Lidl took the #1 spot. Our answer is revenue per store, not store count.</h2>
+  <p class="sub" data-i18n="s3_sub">Kaufland cannot match Lidl's opening pace (71 vs ~134 stores). Kaufland already out-earns Lidl per store by ~1.9x; the growth lever is extracting more per visit and more visits per week.</p>
   <div class="body grid cols-2">
     <div class="chart-box">
-      <h3>Grocery revenue, Bulgaria (€bn)</h3>
-      <div class="cap">Lidl ends Kaufland's 13-year leadership in FY2024</div>
+      <h3 data-i18n="s3_ch1_h">Grocery revenue, Bulgaria (€bn)</h3>
+      <div class="cap" data-i18n="s3_ch1_cap">Lidl ends Kaufland's 13-year leadership in FY2024</div>
       <canvas id="chRace" width="520" height="300"></canvas>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="chart-box" style="flex:1">
-        <h3>Revenue per store, FY2024 (€M, est.)</h3>
-        <div class="cap">Kaufland's format density is the structural advantage</div>
+        <h3 data-i18n="s3_ch2_h">Revenue per store, FY2024 (€M, est.)</h3>
+        <div class="cap" data-i18n="s3_ch2_cap">Kaufland's format density is the structural advantage</div>
         <canvas id="chPerStore" width="520" height="180"></canvas>
       </div>
       <div class="card">
-        <h3>Implication</h3>
-        <p style="font-size:14px;color:var(--ink)">Every +1% of weekly footfall converted into a €4.19 lunch ticket adds
+        <h3 data-i18n="s3_imp_h">Implication</h3>
+        <p style="font-size:14px;color:var(--ink)" data-i18n-html="s3_imp_p">Every +1% of weekly footfall converted into a €4.19 lunch ticket adds
         <b>~€3.3M revenue per year</b> across 71 stores, with no capex on new locations.</p>
       </div>
     </div>
   </div>
-  <div class="src">FY2024: Lidl BG €1.325bn, Kaufland BG €1.306bn (Coface via Mediapool, 2025). FY2023: Kaufland led by BGN 160M at BGN 2.4bn (Capital). Store counts: Kaufland 71, Lidl ~134 (ESM, company data). Per-store = revenue ÷ stores. Billa: ~€613M, ~140 stores (est.).</div>
+  <div class="src" data-i18n="s3_src">FY2024: Lidl BG €1.325bn, Kaufland BG €1.306bn (Coface via Mediapool, 2025). FY2023: Kaufland led by BGN 160M at BGN 2.4bn (Capital). Store counts: Kaufland 71, Lidl ~134 (ESM, company data). Per-store = revenue ÷ stores. Billa: ~€613M, ~140 stores (est.).</div>
   <div class="pageno">3 / 14</div>
 </section>
 
 <!-- ═══════════════ 4 · THE UNTAPPED MISSION ═══════════════ -->
 <section class="slide">
-  <div class="kicker">The opportunity</div>
-  <h2>We already own all three components. They are just never sold together.</h2>
-  <p class="sub">Food-to-go is the fastest-monetising grocery mission in Europe, and it grows through bundles, not footfall.</p>
+  <div class="kicker" data-i18n="s4_kicker">The opportunity</div>
+  <h2 data-i18n="s4_h2">We already own all three components. They are just never sold together.</h2>
+  <p class="sub" data-i18n="s4_sub">Food-to-go is the fastest-monetising grocery mission in Europe, and it grows through bundles, not footfall.</p>
   <div class="body grid cols-3">
     <div class="card">
-      <span class="pill red">Asset 1</span>
-      <h3 style="margin-top:10px">ToGo counter (grab-and-go)</h3>
-      <div class="big" style="font-size:30px">100+ items</div>
-      <p>Ready and semi-ready meals positioned at the store entrance in every remodelled store. Sandwiches, wraps, salads, hot snacks. Today it sells single items at full price with no attach mechanics.</p>
+      <span class="pill red" data-i18n="s4_a1">Asset 1</span>
+      <h3 style="margin-top:10px" data-i18n="s4_a1_h">ToGo counter (grab-and-go)</h3>
+      <div class="big" style="font-size:30px" data-i18n="s4_a1_big">100+ items</div>
+      <p data-i18n="s4_a1_p">Ready and semi-ready meals positioned at the store entrance in every remodelled store. Sandwiches, wraps, salads, hot snacks. Today it sells single items at full price with no attach mechanics.</p>
     </div>
     <div class="card">
-      <span class="pill red">Asset 2</span>
-      <h3 style="margin-top:10px">In-store bakery</h3>
-      <div class="big" style="font-size:30px">60%+ margin</div>
-      <p>Fresh bake-off across the estate, the highest-margin fresh category in the store. Banitsa, croissants, pretzels and desserts are natural lunch companions with near-zero marginal placement cost.</p>
+      <span class="pill red" data-i18n="s4_a2">Asset 2</span>
+      <h3 style="margin-top:10px" data-i18n="s4_a2_h">In-store bakery</h3>
+      <div class="big" style="font-size:30px" data-i18n="s4_a2_big">60%+ margin</div>
+      <p data-i18n="s4_a2_p">Fresh bake-off across the estate, the highest-margin fresh category in the store. Banitsa, croissants, pretzels and desserts are natural lunch companions with near-zero marginal placement cost.</p>
     </div>
     <div class="card">
-      <span class="pill red">Asset 3</span>
-      <h3 style="margin-top:10px">Drinks + XTRA</h3>
+      <span class="pill red" data-i18n="s4_a3">Asset 3</span>
+      <h3 style="margin-top:10px" data-i18n="s4_a3_h">Drinks + XTRA</h3>
       <div class="big" style="font-size:30px">1M MAU</div>
-      <p>Chilled drinks with strong supplier funding appetite, plus Kaufland Card XTRA: 2M+ registered users, 1M+ monthly active, and an AI engine already pushing 10 personalised coupons weekly.</p>
+      <p data-i18n="s4_a3_p">Chilled drinks with strong supplier funding appetite, plus Kaufland Card XTRA: 2M+ registered users, 1M+ monthly active, and an AI engine already pushing 10 personalised coupons weekly.</p>
     </div>
   </div>
   <div class="grid cols-2" style="margin-top:16px">
-    <div class="callout">
+    <div class="callout" data-i18n-html="s4_gap">
       <b>The gap:</b> no fixed lunch price point, no cross-zone bundle, no habit loop. A customer buying a €2.99 wrap
       today leaves €2+ of attachable spend on the table on every visit.
     </div>
-    <div class="callout" style="background:#f4f9f6;border-color:#bfe3cd">
+    <div class="callout" style="background:#f4f9f6;border-color:#bfe3cd" data-i18n-html="s4_bench">
       <b style="color:var(--green)">The benchmark:</b> UK food-to-go hits £24.9bn in 2026 (+3.4%); spend per visit is up
       +8.5% YoY, driven by structured bundles and add-ons rather than traffic (Lumina Intelligence).
     </div>
   </div>
-  <div class="src">ToGo concept: Kaufland BG store communications, 100+ ready/semi-ready items at entrance zone. Loyalty: Kaufland Card XTRA, 2M+ registered, 1M+ monthly active (company statements, May 2026). UK FTG: Lumina Intelligence 2026 forecast.</div>
+  <div class="src" data-i18n="s4_src">ToGo concept: Kaufland BG store communications, 100+ ready/semi-ready items at entrance zone. Loyalty: Kaufland Card XTRA, 2M+ registered, 1M+ monthly active (company statements, May 2026). UK FTG: Lumina Intelligence 2026 forecast.</div>
   <div class="pageno">4 / 14</div>
 </section>
 
 <!-- ═══════════════ 5 · THE PROPOSAL ═══════════════ -->
 <section class="slide">
-  <div class="kicker">What we propose</div>
-  <h2>The mechanic: 1 main + 1 bakery + 1 drink, one fixed price</h2>
-  <p class="sub">Customer picks any item from each of three clearly signed groups. The POS detects the trio automatically at scan and reprices the basket. No coupons, no barcodes, no cashier action.</p>
+  <div class="kicker" data-i18n="s5_kicker">What we propose</div>
+  <h2 data-i18n="s5_h2">The mechanic: 1 main + 1 bakery + 1 drink, one fixed price</h2>
+  <p class="sub" data-i18n="s5_sub">Customer picks any item from each of three clearly signed groups. The POS detects the trio automatically at scan and reprices the basket. No coupons, no barcodes, no cashier action.</p>
   <div class="body grid cols-2">
     <div>
       <table class="tbl">
-        <tr><th>Tier</th><th>Contents</th><th style="text-align:right">Shelf price</th><th style="text-align:right">Deal</th><th style="text-align:right">XTRA card</th></tr>
+        <tr><th data-i18n="s5_th1">Tier</th><th data-i18n="s5_th2">Contents</th><th style="text-align:right" data-i18n="s5_th3">Shelf price</th><th style="text-align:right" data-i18n="s5_th4">Deal</th><th style="text-align:right" data-i18n="s5_th5">XTRA card</th></tr>
         <tr>
           <td><b>Classic</b></td>
-          <td>ToGo main + bakery + 500ml drink</td>
+          <td data-i18n="s5_classic">ToGo main + bakery + 500ml drink</td>
           <td class="num">~€5.77</td>
           <td class="num accent">€4.49</td>
           <td class="num accent">€3.99</td>
         </tr>
         <tr>
-          <td><b>Premium</b></td>
-          <td>Hot main (grill / bowl) + bakery + drink</td>
+          <td><b data-i18n="s5_premium">Premium</b></td>
+          <td data-i18n="s5_premium_c">Hot main (grill / bowl) + bakery + drink</td>
           <td class="num">~€7.60</td>
           <td class="num accent">€5.99</td>
           <td class="num accent">€5.49</td>
         </tr>
       </table>
       <div class="grid cols-3" style="margin-top:14px">
-        <div class="card" style="padding:14px 16px"><h3>Customer saves</h3><div class="big" style="font-size:26px" >22–31%</div><p>vs buying the same three items separately</p></div>
-        <div class="card" style="padding:14px 16px"><h3>Card gap</h3><div class="big" style="font-size:26px">€0.50</div><p>drives XTRA sign-ups and identified transactions</p></div>
-        <div class="card" style="padding:14px 16px"><h3>Availability</h3><div class="big" style="font-size:26px">10–15h</div><p>all day, peak-staffed 11:30 to 14:30</p></div>
+        <div class="card" style="padding:14px 16px"><h3 data-i18n="s5_save_h">Customer saves</h3><div class="big" style="font-size:26px" >22–31%</div><p data-i18n="s5_save_p">vs buying the same three items separately</p></div>
+        <div class="card" style="padding:14px 16px"><h3 data-i18n="s5_gap_h">Card gap</h3><div class="big" style="font-size:26px">€0.50</div><p data-i18n="s5_gap_p">drives XTRA sign-ups and identified transactions</p></div>
+        <div class="card" style="padding:14px 16px"><h3 data-i18n="s5_avail_h">Availability</h3><div class="big" style="font-size:26px">10–15h</div><p data-i18n="s5_avail_p">all day, peak-staffed 11:30 to 14:30</p></div>
       </div>
     </div>
     <div class="chart-box">
-      <h3>Price architecture per Classic deal (€)</h3>
-      <div class="cap">Unbundled shelf total vs deal price vs card price</div>
+      <h3 data-i18n="s5_ch_h">Price architecture per Classic deal (€)</h3>
+      <div class="cap" data-i18n="s5_ch_cap">Unbundled shelf total vs deal price vs card price</div>
       <canvas id="chWaterfall" width="500" height="290"></canvas>
     </div>
   </div>
-  <div class="src">Component reference prices: ToGo main €2.99, bakery €1.29, drink €1.49 (representative mid-points of current BG shelf prices). Tesco equivalent: £3.85 Clubcard / £4.25 standard; premium tier £5.50 / £6.00 (Aug 2025).</div>
+  <div class="src" data-i18n="s5_src">Component reference prices: ToGo main €2.99, bakery €1.29, drink €1.49 (representative mid-points of current BG shelf prices). Tesco equivalent: £3.85 Clubcard / £4.25 standard; premium tier £5.50 / £6.00 (Aug 2025).</div>
   <div class="pageno">5 / 14</div>
 </section>
 
 <!-- ═══════════════ 6 · COMBINATIONS ═══════════════ -->
 <section class="slide">
-  <div class="kicker">The offer on the shelf</div>
-  <h2>Six launch combinations, built from items we sell today</h2>
-  <p class="sub">Curated combinations for signage and app; the mechanic itself accepts any main + bakery + drink, so long-tail choice stays open.</p>
+  <div class="kicker" data-i18n="s6_kicker">The offer on the shelf</div>
+  <h2 data-i18n="s6_h2">Six launch combinations, built from items we sell today</h2>
+  <p class="sub" data-i18n="s6_sub">Curated combinations for signage and app; the mechanic itself accepts any main + bakery + drink, so long-tail choice stays open.</p>
   <div class="body grid cols-3" style="grid-template-rows:1fr 1fr">
     <div class="combo">
-      <span class="tag pill red">Bestseller bet</span>
-      <h4>Office Classic</h4>
+      <span class="tag pill red" data-i18n="s6_t1">Bestseller bet</span>
+      <h4 data-i18n="s6_n1">Office Classic</h4>
       <ul>
-        <li>Chicken &amp; veg wrap (ToGo)<b>€2.99</b></li>
-        <li>Butter croissant (bakery)<b>€1.19</b></li>
-        <li>Ayran 500ml<b>€1.29</b></li>
+        <li><span data-i18n="s6_i1a">Chicken &amp; veg wrap (ToGo)</span><b>€2.99</b></li>
+        <li><span data-i18n="s6_i1b">Butter croissant (bakery)</span><b>€1.19</b></li>
+        <li><span data-i18n="s6_i1c">Ayran 500ml</span><b>€1.29</b></li>
       </ul>
-      <div class="sum"><span>Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.47</span><span class="good">−27%</span></span></div>
+      <div class="sum"><span data-i18n="s6_deal449">Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.47</span><span class="good">−27%</span></span></div>
     </div>
     <div class="combo">
-      <span class="tag pill gray">Traditional</span>
-      <h4>Bulgarian Lunch</h4>
+      <span class="tag pill gray" data-i18n="s6_t2">Traditional</span>
+      <h4 data-i18n="s6_n2">Bulgarian Lunch</h4>
       <ul>
-        <li>Shopska salad box (ToGo)<b>€2.79</b></li>
-        <li>Banitsa with cheese (bakery)<b>€1.49</b></li>
-        <li>Boza / airan 500ml<b>€1.29</b></li>
+        <li><span data-i18n="s6_i2a">Shopska salad box (ToGo)</span><b>€2.79</b></li>
+        <li><span data-i18n="s6_i2b">Banitsa with cheese (bakery)</span><b>€1.49</b></li>
+        <li><span data-i18n="s6_i2c">Boza / airan 500ml</span><b>€1.29</b></li>
       </ul>
-      <div class="sum"><span>Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.57</span><span class="good">−28%</span></span></div>
+      <div class="sum"><span data-i18n="s6_deal449">Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.57</span><span class="good">−28%</span></span></div>
     </div>
     <div class="combo">
-      <span class="tag pill blue">Gen-Z / energy</span>
-      <h4>Power Break</h4>
+      <span class="tag pill blue" data-i18n="s6_t3">Gen-Z / energy</span>
+      <h4 data-i18n="s6_n3">Power Break</h4>
       <ul>
-        <li>Protein chicken pot (ToGo)<b>€3.29</b></li>
-        <li>Whole-grain roll (bakery)<b>€0.99</b></li>
-        <li>Energy drink 250ml<b>€1.59</b></li>
+        <li><span data-i18n="s6_i3a">Protein chicken pot (ToGo)</span><b>€3.29</b></li>
+        <li><span data-i18n="s6_i3b">Whole-grain roll (bakery)</span><b>€0.99</b></li>
+        <li><span data-i18n="s6_i3c">Energy drink 250ml</span><b>€1.59</b></li>
       </ul>
-      <div class="sum"><span>Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.87</span><span class="good">−32%</span></span></div>
+      <div class="sum"><span data-i18n="s6_deal449">Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.87</span><span class="good">−32%</span></span></div>
     </div>
     <div class="combo">
-      <span class="tag pill green">Veggie</span>
-      <h4>Green Box</h4>
+      <span class="tag pill green" data-i18n="s6_t4">Veggie</span>
+      <h4 data-i18n="s6_n4">Green Box</h4>
       <ul>
-        <li>Falafel &amp; hummus salad (ToGo)<b>€3.19</b></li>
-        <li>Seeded pretzel (bakery)<b>€1.09</b></li>
-        <li>Fresh juice 330ml<b>€1.79</b></li>
+        <li><span data-i18n="s6_i4a">Falafel &amp; hummus salad (ToGo)</span><b>€3.19</b></li>
+        <li><span data-i18n="s6_i4b">Seeded pretzel (bakery)</span><b>€1.09</b></li>
+        <li><span data-i18n="s6_i4c">Fresh juice 330ml</span><b>€1.79</b></li>
       </ul>
-      <div class="sum"><span>Deal €4.49 · XTRA €3.99</span><span><span class="was">€6.07</span><span class="good">−34%</span></span></div>
+      <div class="sum"><span data-i18n="s6_deal449">Deal €4.49 · XTRA €3.99</span><span><span class="was">€6.07</span><span class="good">−34%</span></span></div>
     </div>
     <div class="combo">
-      <span class="tag pill red">Premium tier</span>
-      <h4>Hot Grill Deal</h4>
+      <span class="tag pill red" data-i18n="s6_t5">Premium tier</span>
+      <h4 data-i18n="s6_n5">Hot Grill Deal</h4>
       <ul>
-        <li>Grilled chicken portion (hot counter)<b>€4.49</b></li>
-        <li>Fresh baguette half (bakery)<b>€0.89</b></li>
-        <li>Soft drink 500ml<b>€1.49</b></li>
+        <li><span data-i18n="s6_i5a">Grilled chicken portion (hot counter)</span><b>€4.49</b></li>
+        <li><span data-i18n="s6_i5b">Fresh baguette half (bakery)</span><b>€0.89</b></li>
+        <li><span data-i18n="s6_i5c">Soft drink 500ml</span><b>€1.49</b></li>
       </ul>
-      <div class="sum"><span>Deal €5.99 · XTRA €5.49</span><span><span class="was">€6.87</span><span class="good">−20%</span></span></div>
+      <div class="sum"><span data-i18n="s6_deal599">Deal €5.99 · XTRA €5.49</span><span><span class="was">€6.87</span><span class="good">−20%</span></span></div>
     </div>
     <div class="combo">
-      <span class="tag pill gray">Morning window</span>
-      <h4>Breakfast ToGo</h4>
+      <span class="tag pill gray" data-i18n="s6_t6">Morning window</span>
+      <h4 data-i18n="s6_n6">Breakfast ToGo</h4>
       <ul>
-        <li>Egg &amp; cheese sandwich (ToGo)<b>€2.49</b></li>
-        <li>Cocoa swirl (bakery)<b>€1.39</b></li>
-        <li>Iced coffee 250ml<b>€1.69</b></li>
+        <li><span data-i18n="s6_i6a">Egg &amp; cheese sandwich (ToGo)</span><b>€2.49</b></li>
+        <li><span data-i18n="s6_i6b">Cocoa swirl (bakery)</span><b>€1.39</b></li>
+        <li><span data-i18n="s6_i6c">Iced coffee 250ml</span><b>€1.69</b></li>
       </ul>
-      <div class="sum"><span>Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.57</span><span class="good">−28%</span></span></div>
+      <div class="sum"><span data-i18n="s6_deal449">Deal €4.49 · XTRA €3.99</span><span><span class="was">€5.57</span><span class="good">−28%</span></span></div>
     </div>
   </div>
-  <div class="src">Prices are representative current BG shelf mid-points for illustration; final assortment set by Purchasing per store cluster. Tesco 2025 learning: top combo = chicken sandwich + protein pot + energy drink; protein and energy skew young urban, exactly the weekday lunch cohort.</div>
+  <div class="src" data-i18n="s6_src">Prices are representative current BG shelf mid-points for illustration; final assortment set by Purchasing per store cluster. Tesco 2025 learning: top combo = chicken sandwich + protein pot + energy drink; protein and energy skew young urban, exactly the weekday lunch cohort.</div>
   <div class="pageno">6 / 14</div>
 </section>
 
 <!-- ═══════════════ 7 · PROOF ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Evidence base</div>
-  <h2>Meal deals are the most proven bundle mechanic in European grocery</h2>
+  <div class="kicker" data-i18n="s7_kicker">Evidence base</div>
+  <h2 data-i18n="s7_h2">Meal deals are the most proven bundle mechanic in European grocery</h2>
   <div class="body grid cols-2" style="margin-top:10px">
     <div class="chart-box">
-      <h3>UK lunch meal deal price ladder (GBP, 2025)</h3>
-      <div class="cap">A 20-year-old mechanic still growing; Tesco repriced twice since 2022 with no volume loss reported</div>
+      <h3 data-i18n="s7_ch_h">UK lunch meal deal price ladder (GBP, 2025)</h3>
+      <div class="cap" data-i18n="s7_ch_cap">A 20-year-old mechanic still growing; Tesco repriced twice since 2022 with no volume loss reported</div>
       <canvas id="chBench" width="520" height="270"></canvas>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="card">
-        <h3>Volume proof</h3>
-        <p style="font-size:14px;color:var(--ink)"><b>Tesco Ireland sells 70,000+ meal deals weekly across 194 stores</b> through one supplier contract alone (Freshways, €15M/yr). Tesco UK's Clubcard data ranks the meal deal among its highest-frequency purchases; ~80% of shoppers transact identified.</p>
+        <h3 data-i18n="s7_vol_h">Volume proof</h3>
+        <p style="font-size:14px;color:var(--ink)" data-i18n-html="s7_vol_p"><b>Tesco Ireland sells 70,000+ meal deals weekly across 194 stores</b> through one supplier contract alone (Freshways, €15M/yr). Tesco UK's Clubcard data ranks the meal deal among its highest-frequency purchases; ~80% of shoppers transact identified.</p>
       </div>
       <div class="card">
-        <h3>Behavioural mechanics that transfer to Bulgaria</h3>
-        <p style="font-size:13.5px;color:var(--ink)">
+        <h3 data-i18n="s7_beh_h">Behavioural mechanics that transfer to Bulgaria</h3>
+        <p style="font-size:13.5px;color:var(--ink)" data-i18n-html="s7_beh_p">
         <b>1 · Attach:</b> a fixed trio price converts single-item buyers into 3-item baskets.<br>
         <b>2 · Habit:</b> one price, zero decision cost, daily repeatability; lunch is a 5x/week mission.<br>
         <b>3 · Identification:</b> a card-only price gap moves lunch traffic onto XTRA, feeding the AI coupon engine with weekday behaviour we currently never observe.</p>
       </div>
       <div class="card" style="background:#fff8f8;border-color:#f6c6c9">
-        <h3>Competitive window</h3>
-        <p style="font-size:13.5px;color:var(--ink)">No Bulgarian grocer runs a structured cross-category meal deal today. Lidl's format has no service counters or hot zones to copy it at parity. First mover sets the reference price.</p>
+        <h3 data-i18n="s7_win_h">Competitive window</h3>
+        <p style="font-size:13.5px;color:var(--ink)" data-i18n="s7_win_p">No Bulgarian grocer runs a structured cross-category meal deal today. Lidl's format has no service counters or hot zones to copy it at parity. First mover sets the reference price.</p>
       </div>
     </div>
   </div>
-  <div class="src">Tesco pricing: BBC, Aug 2025. Ireland volumes: Business Plus, Freshways contract 2025. Clubcard penetration ~80%: BBC. UK FTG market: Lumina Intelligence 2026. Competitive scan: BG chains' current promotional programmes, Jan–Aug 2026.</div>
+  <div class="src" data-i18n="s7_src">Tesco pricing: BBC, Aug 2025. Ireland volumes: Business Plus, Freshways contract 2025. Clubcard penetration ~80%: BBC. UK FTG market: Lumina Intelligence 2026. Competitive scan: BG chains' current promotional programmes, Jan–Aug 2026.</div>
   <div class="pageno">7 / 14</div>
 </section>
 
 <!-- ═══════════════ 8 · UNIT ECONOMICS ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Unit economics</div>
-  <h2>€1.39 gross profit per deal, 33% margin, after funding the discount</h2>
-  <p class="sub">The bundle discount is engineered against component margins: bakery's 65% cushions the drink's 33%, and branded suppliers co-fund the slot.</p>
+  <div class="kicker" data-i18n="s8_kicker">Unit economics</div>
+  <h2 data-i18n="s8_h2">€1.39 gross profit per deal, 33% margin, after funding the discount</h2>
+  <p class="sub" data-i18n="s8_sub">The bundle discount is engineered against component margins: bakery's 65% cushions the drink's 33%, and branded suppliers co-fund the slot.</p>
   <div class="body grid cols-2">
     <div class="chart-box">
-      <h3>Classic deal P&amp;L bridge (€ per deal, avg ticket €4.19)</h3>
-      <div class="cap">Assumes 60% of deals on XTRA price €3.99, 40% at €4.49</div>
+      <h3 data-i18n="s8_ch_h">Classic deal P&amp;L bridge (€ per deal, avg ticket €4.19)</h3>
+      <div class="cap" data-i18n="s8_ch_cap">Assumes 60% of deals on XTRA price €3.99, 40% at €4.49</div>
       <canvas id="chUnit" width="520" height="290"></canvas>
     </div>
     <div>
       <table class="tbl">
-        <tr><th>Component</th><th style="text-align:right">Shelf</th><th style="text-align:right">COGS</th><th style="text-align:right">Solo margin</th></tr>
-        <tr><td>ToGo counter main</td><td class="num">€2.99</td><td class="num">€1.65</td><td class="num">45%</td></tr>
-        <tr><td>Bakery item</td><td class="num">€1.29</td><td class="num">€0.45</td><td class="num good">65%</td></tr>
-        <tr><td>Drink 500ml</td><td class="num">€1.49</td><td class="num">€1.00</td><td class="num warn">33%</td></tr>
-        <tr><td><b>Bundle, gross</b></td><td class="num"><b>€5.77</b></td><td class="num"><b>€3.10</b></td><td class="num"><b>46%</b></td></tr>
-        <tr><td>Supplier co-funding (drinks slot)</td><td class="num"></td><td class="num good">−€0.30</td><td class="num"></td></tr>
-        <tr><td><b>Deal at €4.19 avg</b></td><td class="num"><b>€4.19</b></td><td class="num"><b>€2.80</b></td><td class="num accent"><b>33%</b></td></tr>
+        <tr><th data-i18n="s8_th1">Component</th><th style="text-align:right" data-i18n="s8_th2">Shelf</th><th style="text-align:right">COGS</th><th style="text-align:right" data-i18n="s8_th4">Solo margin</th></tr>
+        <tr><td data-i18n="s8_r1">ToGo counter main</td><td class="num">€2.99</td><td class="num">€1.65</td><td class="num">45%</td></tr>
+        <tr><td data-i18n="s8_r2">Bakery item</td><td class="num">€1.29</td><td class="num">€0.45</td><td class="num good">65%</td></tr>
+        <tr><td data-i18n="s8_r3">Drink 500ml</td><td class="num">€1.49</td><td class="num">€1.00</td><td class="num warn">33%</td></tr>
+        <tr><td><b data-i18n="s8_r4">Bundle, gross</b></td><td class="num"><b>€5.77</b></td><td class="num"><b>€3.10</b></td><td class="num"><b>46%</b></td></tr>
+        <tr><td data-i18n="s8_r5">Supplier co-funding (drinks slot)</td><td class="num"></td><td class="num good">−€0.30</td><td class="num"></td></tr>
+        <tr><td><b data-i18n="s8_r6">Deal at €4.19 avg</b></td><td class="num"><b>€4.19</b></td><td class="num"><b>€2.80</b></td><td class="num accent"><b>33%</b></td></tr>
       </table>
-      <div class="callout" style="margin-top:14px">
+      <div class="callout" style="margin-top:14px" data-i18n-html="s8_callout">
         <b>Supplier funding is standard practice:</b> UK meal deal drink slots are auctioned to brands
         (Red Bull displaced Coca-Cola as Tesco's #1 deal drink in 2025). Two rotating branded drink slots per quarter
         are a new commercial income line for Purchasing, conservatively modelled at €0.30 per deal.
       </div>
     </div>
   </div>
-  <div class="src">COGS: representative fresh/FTG category margins for BG modern trade; to be validated against internal category P&L in week 1 of the project. Red Bull / Tesco: Clubcard Unpacked 2025, Express &amp; Star.</div>
+  <div class="src" data-i18n="s8_src">COGS: representative fresh/FTG category margins for BG modern trade; to be validated against internal category P&L in week 1 of the project. Red Bull / Tesco: Clubcard Unpacked 2025, Express &amp; Star.</div>
   <div class="pageno">8 / 14</div>
 </section>
 
 <!-- ═══════════════ 9 · PROJECTIONS ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Financial projection</div>
-  <h2>Base case: €8.3M revenue in Year 1, €10.7M at steady state</h2>
+  <div class="kicker" data-i18n="s9_kicker">Financial projection</div>
+  <h2 data-i18n="s9_h2">Base case: €8.3M revenue in Year 1, €10.7M at steady state</h2>
   <div class="body grid cols-2" style="margin-top:10px">
     <div class="chart-box">
-      <h3>Annual revenue by scenario (€M)</h3>
-      <div class="cap">Year 1 = 8 pilot stores for 3 months, then 71 stores for 9 months · Steady state = 71 stores, full year</div>
+      <h3 data-i18n="s9_ch_h">Annual revenue by scenario (€M)</h3>
+      <div class="cap" data-i18n="s9_ch_cap">Year 1 = 8 pilot stores for 3 months, then 71 stores for 9 months · Steady state = 71 stores, full year</div>
       <canvas id="chScen" width="520" height="280"></canvas>
     </div>
     <div>
       <table class="tbl">
-        <tr><th>Assumption</th><th style="text-align:right">Cons.</th><th style="text-align:right">Base</th><th style="text-align:right">Amb.</th></tr>
-        <tr><td>Deals / store / day</td><td class="num">60</td><td class="num">100</td><td class="num">150</td></tr>
-        <tr><td>= share of ~3,000 daily customers</td><td class="num">2.0%</td><td class="num">3.3%</td><td class="num">5.0%</td></tr>
-        <tr><td>Avg ticket (60% XTRA mix)</td><td class="num" colspan="3" style="text-align:center">€4.19</td></tr>
-        <tr><td>Year-1 deals (M)</td><td class="num">1.19</td><td class="num">1.99</td><td class="num">2.98</td></tr>
-        <tr><td>Year-1 revenue (€M)</td><td class="num">5.0</td><td class="num accent"><b>8.3</b></td><td class="num">12.5</td></tr>
-        <tr><td>Year-1 gross profit @33% (€M)</td><td class="num">1.7</td><td class="num accent"><b>2.8</b></td><td class="num">4.1</td></tr>
-        <tr><td>GP net of cannibalisation* (€M)</td><td class="num">1.2</td><td class="num"><b>2.0</b></td><td class="num">3.0</td></tr>
+        <tr><th data-i18n="s9_th1">Assumption</th><th style="text-align:right" data-i18n="s9_th2">Cons.</th><th style="text-align:right" data-i18n="s9_th3">Base</th><th style="text-align:right" data-i18n="s9_th4">Amb.</th></tr>
+        <tr><td data-i18n="s9_r1">Deals / store / day</td><td class="num">60</td><td class="num">100</td><td class="num">150</td></tr>
+        <tr><td data-i18n="s9_r2">= share of ~3,000 daily customers</td><td class="num">2.0%</td><td class="num">3.3%</td><td class="num">5.0%</td></tr>
+        <tr><td data-i18n="s9_r3">Avg ticket (60% XTRA mix)</td><td class="num" colspan="3" style="text-align:center">€4.19</td></tr>
+        <tr><td data-i18n="s9_r4">Year-1 deals (M)</td><td class="num">1.19</td><td class="num">1.99</td><td class="num">2.98</td></tr>
+        <tr><td data-i18n="s9_r5">Year-1 revenue (€M)</td><td class="num">5.0</td><td class="num accent"><b>8.3</b></td><td class="num">12.5</td></tr>
+        <tr><td data-i18n="s9_r6">Year-1 gross profit @33% (€M)</td><td class="num">1.7</td><td class="num accent"><b>2.8</b></td><td class="num">4.1</td></tr>
+        <tr><td data-i18n="s9_r7">GP net of cannibalisation* (€M)</td><td class="num">1.2</td><td class="num"><b>2.0</b></td><td class="num">3.0</td></tr>
       </table>
       <div class="card" style="margin-top:14px">
-        <h3>Cannibalisation is modelled, not ignored</h3>
-        <p style="font-size:13px;color:var(--ink)">*We assume 45% of deal buyers would have bought something anyway
+        <h3 data-i18n="s9_can_h">Cannibalisation is modelled, not ignored</h3>
+        <p style="font-size:13px;color:var(--ink)" data-i18n="s9_can_p">*We assume 45% of deal buyers would have bought something anyway
         (avg €2.90 at 30% margin). Their existing GP is netted out. Even so, the deal upgrades a €2.90 single-item
         basket into a €4.19 trio, so the mechanic is accretive per transaction in every scenario.</p>
       </div>
     </div>
   </div>
-  <div class="src">Daily customers per store: ~1.5M weekly ÷ 71 stores ÷ 7 days ≈ 3,000. Reference: Tesco Ireland ≈ 52 Freshways deals/store/day on partial assortment; UK convenience formats run materially higher. Sensitivity: ±10 deals/day ≈ ±€1.07M steady-state revenue.</div>
+  <div class="src" data-i18n="s9_src">Daily customers per store: ~1.5M weekly ÷ 71 stores ÷ 7 days ≈ 3,000. Reference: Tesco Ireland ≈ 52 Freshways deals/store/day on partial assortment; UK convenience formats run materially higher. Sensitivity: ±10 deals/day ≈ ±€1.07M steady-state revenue.</div>
   <div class="pageno">9 / 14</div>
 </section>
 
 <!-- ═══════════════ 10 · HALO ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Second-order effects</div>
-  <h2>The deal is also a traffic, data and margin-mix instrument</h2>
+  <div class="kicker" data-i18n="s10_kicker">Second-order effects</div>
+  <h2 data-i18n="s10_h2">The deal is also a traffic, data and margin-mix instrument</h2>
   <div class="body grid cols-2" style="margin-top:10px">
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="card">
-        <h3>Frequency: the real prize</h3>
-        <p style="font-size:14px;color:var(--ink)">Lunch is a 5x/week mission; a weekly big shop is 1x. If the deal converts
+        <h3 data-i18n="s10_f_h">Frequency: the real prize</h3>
+        <p style="font-size:14px;color:var(--ink)" data-i18n-html="s10_f_p">Lunch is a 5x/week mission; a weekly big shop is 1x. If the deal converts
         <b>3% of the 1M+ active XTRA users into +2 extra store visits per month</b>, and each extra visit carries just €2 of
         non-deal spend, that is <b>~€1.4M/year of additional halo revenue</b> on top of the deal itself.</p>
       </div>
       <div class="card">
-        <h3>Data: weekday behaviour we never see</h3>
-        <p style="font-size:14px;color:var(--ink)">The €0.50 card gap pushes lunch transactions onto XTRA. Every identified deal
+        <h3 data-i18n="s10_d_h">Data: weekday behaviour we never see</h3>
+        <p style="font-size:14px;color:var(--ink)" data-i18n="s10_d_p">The €0.50 card gap pushes lunch transactions onto XTRA. Every identified deal
         feeds the existing AI coupon engine with a new behavioural dimension (weekday, time-of-day, meal preference),
         improving targeting of the 10 weekly personalised coupons already in production.</p>
       </div>
       <div class="card">
-        <h3>Waste: bundles clear fresh stock</h3>
-        <p style="font-size:14px;color:var(--ink)">The ToGo counter and bakery carry the store's highest write-off risk. A predictable
+        <h3 data-i18n="s10_w_h">Waste: bundles clear fresh stock</h3>
+        <p style="font-size:14px;color:var(--ink)" data-i18n-html="s10_w_p">The ToGo counter and bakery carry the store's highest write-off risk. A predictable
         daily deal volume smooths production planning and can absorb short-dated items into the mains group, cutting fresh
         shrink by a targeted <b>1–2 p.p.</b> in the two categories.</p>
       </div>
     </div>
     <div class="chart-box">
-      <h3>Halo model: base case, steady state (€M / year)</h3>
-      <div class="cap">Deal revenue + frequency halo + waste saving, net of cannibalisation</div>
+      <h3 data-i18n="s10_ch_h">Halo model: base case, steady state (€M / year)</h3>
+      <div class="cap" data-i18n="s10_ch_cap">Deal revenue + frequency halo + waste saving, net of cannibalisation</div>
       <canvas id="chHalo" width="500" height="300"></canvas>
     </div>
   </div>
-  <div class="src">Halo math: 1M MAU × 3% × 24 extra visits/yr × €2 ≈ €1.44M. Waste: BG fresh shrink benchmarks 3–6% of category sales; 1.5 p.p. on ~€25M ToGo+bakery pilot-relevant sales ≈ €0.4M. Both tracked as pilot KPIs before being claimed.</div>
+  <div class="src" data-i18n="s10_src">Halo math: 1M MAU × 3% × 24 extra visits/yr × €2 ≈ €1.44M. Waste: BG fresh shrink benchmarks 3–6% of category sales; 1.5 p.p. on ~€25M ToGo+bakery pilot-relevant sales ≈ €0.4M. Both tracked as pilot KPIs before being claimed.</div>
   <div class="pageno">10 / 14</div>
 </section>
 
 <!-- ═══════════════ 11 · SAP ARCHITECTURE ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Systems integration</div>
-  <h2>It is a promotion, not a product: standard SAP, zero new SKUs</h2>
-  <p class="sub">The deal maps 1:1 onto the Mix-and-Match / Bonus Buy pattern that the Schwarz SAP retail stack supports out of standard. Components keep their EANs, inventory and category P&amp;L.</p>
+  <div class="kicker" data-i18n="s11_kicker">Systems integration</div>
+  <h2 data-i18n="s11_h2">It is a promotion, not a product: standard SAP, zero new SKUs</h2>
+  <p class="sub" data-i18n="s11_sub">The deal maps 1:1 onto the Mix-and-Match / Bonus Buy pattern that the Schwarz SAP retail stack supports out of standard. Components keep their EANs, inventory and category P&amp;L.</p>
   <div class="body">
     <div class="flow">
       <div class="fbox hl">
-        <h4><span class="sys">SAP S/4HANA Retail</span>Promotion definition</h4>
-        <p>Three component groups (Mains / Bakery / Drinks) as article hierarchies. Bonus Buy: "1 of each group → €4.49"; card-linked condition €3.99. Owned by Purchasing, per store cluster.</p>
+        <h4><span class="sys">SAP S/4HANA Retail</span><span data-i18n="s11_f1_h">Promotion definition</span></h4>
+        <p data-i18n="s11_f1_p">Three component groups (Mains / Bakery / Drinks) as article hierarchies. Bonus Buy: "1 of each group → €4.49"; card-linked condition €3.99. Owned by Purchasing, per store cluster.</p>
       </div>
-      <div class="farrow"><div>→<div class="flabel">standard replication<br>(offer/promo services, IDoc)</div></div></div>
+      <div class="farrow"><div>→<div class="flabel" data-i18n-html="s11_a1">standard replication<br>(offer/promo services, IDoc)</div></div></div>
       <div class="fbox">
-        <h4><span class="sys">Store POS · GK / SAP Store Solutions</span>Execution at scan</h4>
-        <p>POS promotion engine detects the trio in the basket and reprices automatically. Works identically at staffed tills and self-checkout. No cashier training beyond awareness.</p>
+        <h4><span class="sys">Store POS · GK / SAP Store Solutions</span><span data-i18n="s11_f2_h">Execution at scan</span></h4>
+        <p data-i18n="s11_f2_p">POS promotion engine detects the trio in the basket and reprices automatically. Works identically at staffed tills and self-checkout. No cashier training beyond awareness.</p>
       </div>
-      <div class="farrow"><div>→<div class="flabel">TLOG upload,<br>receipt level</div></div></div>
+      <div class="farrow"><div>→<div class="flabel" data-i18n-html="s11_a2">TLOG upload,<br>receipt level</div></div></div>
       <div class="fbox">
-        <h4><span class="sys">SAP CAR</span>Data hub &amp; analytics</h4>
-        <p>Receipt-level attach, component mix, hour-of-day, cannibalisation, waste. Discount apportioned pro-rata across components, keeping category P&amp;L clean. Feeds demand forecast for bakery production.</p>
+        <h4><span class="sys">SAP CAR</span><span data-i18n="s11_f3_h">Data hub &amp; analytics</span></h4>
+        <p data-i18n="s11_f3_p">Receipt-level attach, component mix, hour-of-day, cannibalisation, waste. Discount apportioned pro-rata across components, keeping category P&amp;L clean. Feeds demand forecast for bakery production.</p>
       </div>
-      <div class="farrow"><div>→<div class="flabel">segments &amp;<br>coupons</div></div></div>
+      <div class="farrow"><div>→<div class="flabel" data-i18n-html="s11_a3">segments &amp;<br>coupons</div></div></div>
       <div class="fbox">
-        <h4><span class="sys">Kaufland App · XTRA</span>Loyalty layer</h4>
-        <p>Card price applied via existing loyalty pricing; AI coupon engine targets lapsed lunchers and upsells the Premium tier. Deal page and combo inspiration in the app.</p>
+        <h4><span class="sys">Kaufland App · XTRA</span><span data-i18n="s11_f4_h">Loyalty layer</span></h4>
+        <p data-i18n="s11_f4_p">Card price applied via existing loyalty pricing; AI coupon engine targets lapsed lunchers and upsells the Premium tier. Deal page and combo inspiration in the app.</p>
       </div>
     </div>
     <div class="grid cols-3" style="margin-top:18px">
       <div class="card" style="padding:14px 16px">
-        <h3>Why zero new SKUs matters</h3>
-        <p style="font-size:12.5px">No new article master data, no new supply chain lanes, no double inventory. Range changes = editing a group list, not relaunching a product.</p>
+        <h3 data-i18n="s11_c1_h">Why zero new SKUs matters</h3>
+        <p style="font-size:12.5px" data-i18n="s11_c1_p">No new article master data, no new supply chain lanes, no double inventory. Range changes = editing a group list, not relaunching a product.</p>
       </div>
       <div class="card" style="padding:14px 16px">
-        <h3>Clean margin accounting</h3>
-        <p style="font-size:12.5px">Pro-rata discount allocation in the transaction log means each category (Fresh, Bakery, Beverages) reports true post-deal margin. No P&amp;L disputes between category managers.</p>
+        <h3 data-i18n="s11_c2_h">Clean margin accounting</h3>
+        <p style="font-size:12.5px" data-i18n="s11_c2_p">Pro-rata discount allocation in the transaction log means each category (Fresh, Bakery, Beverages) reports true post-deal margin. No P&amp;L disputes between category managers.</p>
       </div>
       <div class="card" style="padding:14px 16px">
-        <h3>Fits the Schwarz IT roadmap</h3>
-        <p style="font-size:12.5px">Schwarz IT already runs GK POS group-wide and SAP CAR as the retail data hub; omnichannel price consistency for the app comes from the same promotion objects.</p>
+        <h3 data-i18n="s11_c3_h">Fits the Schwarz IT roadmap</h3>
+        <p style="font-size:12.5px" data-i18n="s11_c3_p">Schwarz IT already runs GK POS group-wide and SAP CAR as the retail data hub; omnichannel price consistency for the app comes from the same promotion objects.</p>
       </div>
     </div>
   </div>
-  <div class="src">Pattern: SAP Retail Bonus Buy / Mix-and-Match with standard offer replication to GK POS ("SAP Store Solutions by GK", SAP's strategic POS partner) and receipt upload to SAP CAR. Schwarz IT / GK relationship: GK Software corporate news; Retail Optimiser.</div>
+  <div class="src" data-i18n="s11_src">Pattern: SAP Retail Bonus Buy / Mix-and-Match with standard offer replication to GK POS ("SAP Store Solutions by GK", SAP's strategic POS partner) and receipt upload to SAP CAR. Schwarz IT / GK relationship: GK Software corporate news; Retail Optimiser.</div>
   <div class="pageno">11 / 14</div>
 </section>
 
 <!-- ═══════════════ 12 · BUILD PLAN ═══════════════ -->
 <section class="slide">
-  <div class="kicker">Implementation</div>
-  <h2>Eight weeks to pilot go-live, configuration only</h2>
+  <div class="kicker" data-i18n="s12_kicker">Implementation</div>
+  <h2 data-i18n="s12_h2">Eight weeks to pilot go-live, configuration only</h2>
   <div class="body" style="margin-top:8px">
     <table class="tbl">
-      <tr><th style="width:52px">Weeks</th><th>Workstream</th><th>What gets done</th><th style="width:190px">Owner</th></tr>
-      <tr><td class="num">1–2</td><td><b>Component groups</b></td><td>Define Mains / Bakery / Drinks eligibility lists in article hierarchy; validate COGS per item against category P&amp;L; lock price tiers.</td><td>Purchasing + Master Data</td></tr>
-      <tr><td class="num">2–3</td><td><b>Promotion config</b></td><td>Bonus Buy set-up in S/4HANA Retail: trio condition €4.49 / Premium €5.99; XTRA card-linked prices; validity and store-cluster scoping.</td><td>Pricing team</td></tr>
-      <tr><td class="num">3–5</td><td><b>POS replication &amp; test</b></td><td>Replicate offers to 8 pilot-store POS; regression: staffed till, self-checkout, mixed baskets, returns, receipt layout showing the saving.</td><td>Schwarz IT</td></tr>
-      <tr><td class="num">4–6</td><td><b>CAR dashboards</b></td><td>Attach rate, deals/store/day, component mix, hour-of-day heatmap, cannibalisation panel, fresh-shrink tracker. Daily refresh, board-ready.</td><td>BI / Schwarz IT</td></tr>
-      <tr><td class="num">4–8</td><td><b>App &amp; loyalty</b></td><td>Deal tile in the Kaufland app, XTRA price display, launch coupon (first deal €2.99), audience for AI coupon engine.</td><td>Marketing + Schwarz IT digital</td></tr>
-      <tr><td class="num">5–8</td><td><b>Store operations</b></td><td>Adjacency: drinks fridge at the ToGo counter, bakery deal shelf; unified signage; bakery production plan for lunch peak; staff briefing.</td><td>Store Ops (pilot region)</td></tr>
+      <tr><th style="width:52px" data-i18n="s12_th1">Weeks</th><th data-i18n="s12_th2">Workstream</th><th data-i18n="s12_th3">What gets done</th><th style="width:190px" data-i18n="s12_th4">Owner</th></tr>
+      <tr><td class="num">1–2</td><td><b data-i18n="s12_w1">Component groups</b></td><td data-i18n="s12_d1">Define Mains / Bakery / Drinks eligibility lists in article hierarchy; validate COGS per item against category P&amp;L; lock price tiers.</td><td data-i18n="s12_o1">Purchasing + Master Data</td></tr>
+      <tr><td class="num">2–3</td><td><b data-i18n="s12_w2">Promotion config</b></td><td data-i18n="s12_d2">Bonus Buy set-up in S/4HANA Retail: trio condition €4.49 / Premium €5.99; XTRA card-linked prices; validity and store-cluster scoping.</td><td data-i18n="s12_o2">Pricing team</td></tr>
+      <tr><td class="num">3–5</td><td><b data-i18n="s12_w3">POS replication &amp; test</b></td><td data-i18n="s12_d3">Replicate offers to 8 pilot-store POS; regression: staffed till, self-checkout, mixed baskets, returns, receipt layout showing the saving.</td><td>Schwarz IT</td></tr>
+      <tr><td class="num">4–6</td><td><b data-i18n="s12_w4">CAR dashboards</b></td><td data-i18n="s12_d4">Attach rate, deals/store/day, component mix, hour-of-day heatmap, cannibalisation panel, fresh-shrink tracker. Daily refresh, board-ready.</td><td>BI / Schwarz IT</td></tr>
+      <tr><td class="num">4–8</td><td><b data-i18n="s12_w5">App &amp; loyalty</b></td><td data-i18n="s12_d5">Deal tile in the Kaufland app, XTRA price display, launch coupon (first deal €2.99), audience for AI coupon engine.</td><td data-i18n="s12_o5">Marketing + Schwarz IT digital</td></tr>
+      <tr><td class="num">5–8</td><td><b data-i18n="s12_w6">Store operations</b></td><td data-i18n="s12_d6">Adjacency: drinks fridge at the ToGo counter, bakery deal shelf; unified signage; bakery production plan for lunch peak; staff briefing.</td><td data-i18n="s12_o6">Store Ops (pilot region)</td></tr>
     </table>
     <div class="grid cols-2" style="margin-top:14px">
-      <div class="callout"><b>No custom development.</b> Every element above is configuration or content on systems already in production. The one hard dependency is offer-replication capacity in the pilot window, to be confirmed with Schwarz IT in week 1.</div>
-      <div class="callout" style="background:#f4f9f6;border-color:#bfe3cd"><b style="color:var(--green)">One-off cost estimate: ~€180k</b> (signage and fixtures ~€120k for 8 stores, project team ~€60k). Recovered by base-case gross profit in under 6 weeks of national operation.</div>
+      <div class="callout" data-i18n-html="s12_c1"><b>No custom development.</b> Every element above is configuration or content on systems already in production. The one hard dependency is offer-replication capacity in the pilot window, to be confirmed with Schwarz IT in week 1.</div>
+      <div class="callout" style="background:#f4f9f6;border-color:#bfe3cd" data-i18n-html="s12_c2"><b style="color:var(--green)">One-off cost estimate: ~€180k</b> (signage and fixtures ~€120k for 8 stores, project team ~€60k). Recovered by base-case gross profit in under 6 weeks of national operation.</div>
     </div>
   </div>
-  <div class="src">Effort estimates assume standard Schwarz IT change process; to be validated in project kick-off. Fixture cost: €15k/store for entrance-zone adjacency and signage, pilot spec.</div>
+  <div class="src" data-i18n="s12_src">Effort estimates assume standard Schwarz IT change process; to be validated in project kick-off. Fixture cost: €15k/store for entrance-zone adjacency and signage, pilot spec.</div>
   <div class="pageno">12 / 14</div>
 </section>
 
 <!-- ═══════════════ 13 · PILOT & KPIs ═══════════════ -->
 <section class="slide">
-  <div class="kicker">De-risking</div>
-  <h2>12-week Sofia pilot with hard gates, then a data-driven rollout decision</h2>
+  <div class="kicker" data-i18n="s13_kicker">De-risking</div>
+  <h2 data-i18n="s13_h2">12-week Sofia pilot with hard gates, then a data-driven rollout decision</h2>
   <div class="body grid cols-2" style="margin-top:8px">
     <div>
       <div class="steps">
-        <div class="step"><div class="n"></div><div><h4>Weeks 1–8 · Build</h4><p>Configuration, dashboards, fixtures in 8 Sofia stores (mix of office-dense and residential catchments for honest read-across).</p></div></div>
-        <div class="step"><div class="n"></div><div><h4>Weeks 9–20 · Live pilot</h4><p>Daily CAR dashboard; weekly trade review with Purchasing; price and assortment tuning allowed at weeks 12 and 16 only, to keep the test clean.</p></div></div>
-        <div class="step"><div class="n"></div><div><h4>Week 21 · Gate review</h4><p>Go / tune / stop decision against the KPI table. Go = national rollout in 2 waves over 8 weeks, ~35 stores per wave.</p></div></div>
-        <div class="step"><div class="n"></div><div><h4>Month 9 · Full estate</h4><p>All 71 stores live; premium tier and breakfast window activated; supplier drink-slot tender for the next two quarters.</p></div></div>
+        <div class="step"><div class="n"></div><div><h4 data-i18n="s13_st1_h">Weeks 1–8 · Build</h4><p data-i18n="s13_st1_p">Configuration, dashboards, fixtures in 8 Sofia stores (mix of office-dense and residential catchments for honest read-across).</p></div></div>
+        <div class="step"><div class="n"></div><div><h4 data-i18n="s13_st2_h">Weeks 9–20 · Live pilot</h4><p data-i18n="s13_st2_p">Daily CAR dashboard; weekly trade review with Purchasing; price and assortment tuning allowed at weeks 12 and 16 only, to keep the test clean.</p></div></div>
+        <div class="step"><div class="n"></div><div><h4 data-i18n="s13_st3_h">Week 21 · Gate review</h4><p data-i18n="s13_st3_p">Go / tune / stop decision against the KPI table. Go = national rollout in 2 waves over 8 weeks, ~35 stores per wave.</p></div></div>
+        <div class="step"><div class="n"></div><div><h4 data-i18n="s13_st4_h">Month 9 · Full estate</h4><p data-i18n="s13_st4_p">All 71 stores live; premium tier and breakfast window activated; supplier drink-slot tender for the next two quarters.</p></div></div>
       </div>
     </div>
     <div>
       <table class="tbl">
-        <tr><th>Pilot KPI (measured in SAP CAR)</th><th style="text-align:right">Gate to roll out</th></tr>
-        <tr><td>Deals per store per day, weeks 17–20 avg</td><td class="num">≥ 80</td></tr>
-        <tr><td>Blended gross margin per deal</td><td class="num">≥ 30%</td></tr>
-        <tr><td>XTRA card share of deal transactions</td><td class="num">≥ 55%</td></tr>
-        <tr><td>Net GP after measured cannibalisation</td><td class="num">≥ €0.90 / deal</td></tr>
-        <tr><td>Deal-buyer visit frequency vs control cohort</td><td class="num">+0.3 visits / month</td></tr>
-        <tr><td>ToGo + bakery shrink vs pre-pilot baseline</td><td class="num">≤ baseline</td></tr>
+        <tr><th data-i18n="s13_th1">Pilot KPI (measured in SAP CAR)</th><th style="text-align:right" data-i18n="s13_th2">Gate to roll out</th></tr>
+        <tr><td data-i18n="s13_k1">Deals per store per day, weeks 17–20 avg</td><td class="num">≥ 80</td></tr>
+        <tr><td data-i18n="s13_k2">Blended gross margin per deal</td><td class="num">≥ 30%</td></tr>
+        <tr><td data-i18n="s13_k3">XTRA card share of deal transactions</td><td class="num">≥ 55%</td></tr>
+        <tr><td data-i18n="s13_k4">Net GP after measured cannibalisation</td><td class="num" data-i18n="s13_k4n">≥ €0.90 / deal</td></tr>
+        <tr><td data-i18n="s13_k5">Deal-buyer visit frequency vs control cohort</td><td class="num" data-i18n="s13_k5n">+0.3 visits / month</td></tr>
+        <tr><td data-i18n="s13_k6">ToGo + bakery shrink vs pre-pilot baseline</td><td class="num" data-i18n="s13_k6n">≤ baseline</td></tr>
       </table>
       <div class="card" style="margin-top:14px">
-        <h3>What the pilot must answer</h3>
-        <p style="font-size:13.5px;color:var(--ink)">True attach rate in Bulgarian shopping culture, the right €3.99 vs €4.49 gap,
+        <h3 data-i18n="s13_q_h">What the pilot must answer</h3>
+        <p style="font-size:13.5px;color:var(--ink)" data-i18n="s13_q_p">True attach rate in Bulgarian shopping culture, the right €3.99 vs €4.49 gap,
         weekday vs weekend skew, and whether office catchments outperform enough to justify differentiated assortment.
         Every question maps to a dashboard, not an opinion.</p>
       </div>
     </div>
   </div>
-  <div class="src">Control cohort: matched XTRA users in non-pilot Sofia stores, tracked via loyalty IDs in CAR. Cannibalisation measured as delta in solo ToGo/bakery/drink units among deal buyers vs their own 12-week pre-period.</div>
+  <div class="src" data-i18n="s13_src">Control cohort: matched XTRA users in non-pilot Sofia stores, tracked via loyalty IDs in CAR. Cannibalisation measured as delta in solo ToGo/bakery/drink units among deal buyers vs their own 12-week pre-period.</div>
   <div class="pageno">13 / 14</div>
 </section>
 
 <!-- ═══════════════ 14 · THE ASK ═══════════════ -->
 <section class="slide dark">
-  <div class="kicker">Decision</div>
-  <h2 style="color:#fff;font-size:40px;margin-top:6px">The ask: approve the pilot. The data decides the rest.</h2>
+  <div class="kicker" data-i18n="s14_kicker">Decision</div>
+  <h2 style="color:#fff;font-size:40px;margin-top:6px" data-i18n="s14_h2">The ask: approve the pilot. The data decides the rest.</h2>
   <div class="body grid cols-3" style="margin-top:26px">
     <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)">
-      <h3 style="color:#9aa4b1">Approve</h3>
-      <p style="font-size:15px;color:#e8ecf1;line-height:1.55">8-store Sofia pilot, 12 weeks live, ~€180k one-off budget,
+      <h3 style="color:#9aa4b1" data-i18n="s14_a_h">Approve</h3>
+      <p style="font-size:15px;color:#e8ecf1;line-height:1.55" data-i18n="s14_a_p">8-store Sofia pilot, 12 weeks live, ~€180k one-off budget,
       and a project team of one lead from Purchasing, Pricing, Schwarz IT, BI and Store Ops each.</p>
     </div>
     <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)">
-      <h3 style="color:#9aa4b1">You get</h3>
-      <p style="font-size:15px;color:#e8ecf1;line-height:1.55">A board-ready CAR dashboard from day 1, a gate review in week 21
+      <h3 style="color:#9aa4b1" data-i18n="s14_g_h">You get</h3>
+      <p style="font-size:15px;color:#e8ecf1;line-height:1.55" data-i18n="s14_g_p">A board-ready CAR dashboard from day 1, a gate review in week 21
       with measured attach, margin, frequency and cannibalisation, and a costed national rollout plan.</p>
     </div>
     <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)">
-      <h3 style="color:#9aa4b1">At stake</h3>
-      <p style="font-size:15px;color:#e8ecf1;line-height:1.55">€10.7M steady-state revenue, ~€2.6M net gross profit with halo,
+      <h3 style="color:#9aa4b1" data-i18n="s14_s_h">At stake</h3>
+      <p style="font-size:15px;color:#e8ecf1;line-height:1.55" data-i18n="s14_s_p">€10.7M steady-state revenue, ~€2.6M net gross profit with halo,
       a new supplier income line, and the first structured lunch offer in Bulgarian grocery, before anyone else builds one.</p>
     </div>
   </div>
-  <div style="margin-top:34px;font-size:16px;color:#b9c1cc;line-height:1.6;max-width:900px">
+  <div style="margin-top:34px;font-size:16px;color:#b9c1cc;line-height:1.6;max-width:900px" data-i18n-html="s14_close">
     Kaufland already owns the ToGo counter, the bakery, the drinks aisle, the loyalty engine and the SAP stack to connect them.
     The meal deal is not a new business. <b style="color:#fff">It is a price signal that makes five existing assets work as one.</b>
   </div>
-  <div class="src">Contact: [presenter name] · Proposal v1.0 · August 2026 · All projections subject to pilot validation.</div>
+  <div class="src" data-i18n="s14_src">Contact: [presenter name] · Proposal v1.0 · August 2026 · All projections subject to pilot validation.</div>
   <div class="pageno">14 / 14</div>
 </section>
 
 </div>
 
+<div id="langDock" hidden>
+  <span class="lang-dock-label" data-i18n="lang_label">Language</span>
+  <div class="lang-seg" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en" class="is-on" aria-pressed="true">EN</button>
+    <button type="button" data-set-lang="bg" aria-pressed="false">БГ</button>
+  </div>
+</div>
 <div id="nav">
   <button id="prev" title="Previous">↑</button>
   <button id="next" title="Next">↓</button>
 </div>
 
 <script>
+/* ---------- i18n ---------- */
+const BG={
+  doc_title:'Kaufland България · Предложение за обяден комплект',
+  lang_label:'Език',
+  s1_kicker:'Търговско предложение · Поверително',
+  s1_h1:'Обядът на Kaufland.<br><span style="color:#ff5a63">Една цена. Три зони. Нова ежедневна мисия.</span>',
+  s1_lead:'Обединяваме ToGo витрината, пекарната в магазина и реда с напитки в една фиксирана обядна оферта. Работи изцяло върху съществуващия SAP промо стек, без нови SKU.',
+  s1_for:'Подготвено за',
+  s1_for_val:'Stephan Lüger · Търговски директор,<br>член на Управителния съвет',
+  s1_scope:'Обхват',
+  s1_scope_val:'71 хипермаркета · 35 града<br>~1,5 млн. клиенти седмично',
+  s1_base:'Базов сценарий, година 1',
+  s1_base_val:'€8.3M приход · €2.8M брутна печалба<br>12-седмичен пилот преди разгръщане',
+  s1_src:'Навигация със стрелки <span style="color:#9aa4b1">←  →</span>. Всички суми са в евро, освен ако не е посочено друго. Източниците са към всеки слайд.',
+  s2_kicker:'Резюме',
+  s2_h2:'Предложението в четири числа',
+  s2_sub:'Основно ястие от ToGo витрината + печиво + напитка = <b>€4.49</b>, или <b>€3.99</b> с Kaufland Card XTRA.',
+  s2_c1_h:'Приход година 1, базов сценарий',
+  s2_c1_p:'100 комплекта на магазин на ден след националното разгръщане през месец 4. Устойчиво ниво: €10.7M годишно.',
+  s2_c2_h:'Брутна маржа на комплект',
+  s2_c2_p:'€1.39 брутна печалба при среден билет €4.19, след съфинансиране от доставчик от €0.30 за брандирани напитки.',
+  s2_c3_h:'Необходими нови SKU',
+  s2_c3_p:'Работи като Mix-and-Match Bonus Buy в SAP Retail. Компонентите запазват EAN, наличности и категорийния P&L.',
+  s2_c4_h:'Време до пилот',
+  s2_weeks:' седмици',
+  s2_c4_p:'Само конфигурация и съдържание, без custom разработка. Пилот в 8 софийски магазина, 12 седмици, твърди KPI прагове.',
+  s2_callout:'<b>Защо сега:</b> Lidl изпревари Kaufland по приходи в България през 2024 след 13 години лидерство на Kaufland. Няма да спечелим, като отваряме магазини по-бързо. Печелим, като монетизираме мисия, която форматът на Lidl не може да обслужи: обедът в делничен ден, с активи, които вече оперираме във всеки магазин.',
+  s2_src:'Надпревара по приходи: анализ на оборотите на Coface за 2024 чрез Mediapool; Capital weekly. Икономика на комплекта: това предложение, допускания на слайд 9.',
+  s3_kicker:'Пазарен контекст',
+  s3_h2:'2024: Lidl взе първото място. Отговорът ни е приход на магазин, не брой магазини.',
+  s3_sub:'Kaufland не може да настигне темпото на Lidl при отваряне (71 срещу ~134 магазина). Kaufland вече изкарва ~1,9 пъти повече на магазин; лостът за растеж е повече приход на посещение и повече посещения на седмица.',
+  s3_ch1_h:'Приходи от хранителен ритейл, България (€ млрд.)',
+  s3_ch1_cap:'Lidl прекратява 13-годишното лидерство на Kaufland през FY2024',
+  s3_ch2_h:'Приход на магазин, FY2024 (€M, оценка)',
+  s3_ch2_cap:'Плътността на формата е структурното ни предимство',
+  s3_imp_h:'Извод',
+  s3_imp_p:'Всеки +1% от седмичния трафик, превърнат в обяд за €4.19, добавя <b>~€3.3M приход годишно</b> в 71 магазина, без капиталови разходи за нови локации.',
+  s3_src:'FY2024: Lidl BG €1.325bn, Kaufland BG €1.306bn (Coface чрез Mediapool, 2025). FY2023: Kaufland водеше с 160 млн. лв. при 2,4 млрд. лв. (Capital). Магазини: Kaufland 71, Lidl ~134 (ESM, фирмени данни). На магазин = приход ÷ магазини. Billa: ~€613M, ~140 магазина (оценка).',
+  s4_kicker:'Възможността',
+  s4_h2:'Вече притежаваме и трите компонента. Просто никога не ги продаваме заедно.',
+  s4_sub:'Food-to-go е най-бързо монетизиращата се мисия в европейския ритейл и расте чрез комплекти, не чрез трафик.',
+  s4_a1:'Актив 1',s4_a2:'Актив 2',s4_a3:'Актив 3',
+  s4_a1_h:'ToGo витрина (grab-and-go)',
+  s4_a1_big:'100+ артикула',
+  s4_a1_p:'Готови и полуготови ястия на входа във всеки реновиран магазин. Сандвичи, wrap-ове, салати, топли закуски. Днес се продават поотделно на пълна цена, без attach механика.',
+  s4_a2_h:'Пекарна в магазина',
+  s4_a2_big:'60%+ маржа',
+  s4_a2_p:'Прясна bake-off пекарна в цялата мрежа, категорията с най-висока маржа в магазина. Баница, кроасани, гевреци и десерти са естествени спътници на обеда, с почти нулев допълнителен разход за позициониране.',
+  s4_a3_h:'Напитки + XTRA',
+  s4_a3_p:'Охладени напитки със силен апетит за съфинансиране от доставчици, плюс Kaufland Card XTRA: над 2 млн. регистрирани, над 1 млн. месечно активни и AI двигател, който вече праща 10 персонализирани купона седмично.',
+  s4_gap:'<b>Липсата:</b> няма фиксирана обядна цена, няма крос-зонален комплект, няма цикъл на навика. Клиент, който купува wrap за €2.99 днес, оставя над €2 attachable разход на масата при всяко посещение.',
+  s4_bench:'<b style="color:var(--green)">Бенчмаркът:</b> британският food-to-go достига £24.9bn през 2026 (+3.4%); разходът на посещение е +8.5% YoY, задвижван от структурирани комплекти и add-on-и, а не от трафик (Lumina Intelligence).',
+  s4_src:'Концепция ToGo: комуникации на магазините на Kaufland BG, 100+ готови/полуготови артикула на входа. Лоялност: Kaufland Card XTRA, над 2 млн. регистрирани, над 1 млн. месечно активни (фирмени изявления, май 2026). UK FTG: прогноза на Lumina Intelligence за 2026.',
+  s5_kicker:'Какво предлагаме',
+  s5_h2:'Механиката: 1 основно + 1 печиво + 1 напитка, една фиксирана цена',
+  s5_sub:'Клиентът избира по един артикул от три ясно обозначени групи. POS-ът разпознава триото автоматично при сканиране и преоценява кошницата. Без купони, без баркодове, без действие от касиера.',
+  s5_th1:'Ниво',s5_th2:'Съдържание',s5_th3:'Цена на рафт',s5_th4:'Оферта',s5_th5:'XTRA карта',
+  s5_classic:'ToGo основно + печиво + напитка 500 мл',
+  s5_premium:'Премиум',
+  s5_premium_c:'Топло основно (грил / боул) + печиво + напитка',
+  s5_save_h:'Клиентът спестява',s5_save_p:'спрямо същите три артикула поотделно',
+  s5_gap_h:'Разлика с карта',s5_gap_p:'води към регистрации в XTRA и идентифицирани транзакции',
+  s5_avail_h:'Наличност',s5_avail_p:'цял ден, пиков персонал 11:30–14:30',
+  s5_ch_h:'Ценова архитектура на Classic комплект (€)',
+  s5_ch_cap:'Рафтова сума поотделно срещу цена на офертата срещу цена с карта',
+  s5_src:'Референтни цени: ToGo основно €2.99, печиво €1.29, напитка €1.49 (представителни средни точки на текущи BG рафтови цени). Еквивалент Tesco: £3.85 Clubcard / £4.25 стандарт; премиум £5.50 / £6.00 (авг. 2025).',
+  s6_kicker:'Офертата на рафта',
+  s6_h2:'Шест стартови комбинации от артикули, които продаваме днес',
+  s6_sub:'Курирани комбинации за табели и приложение; механиката приема всяко основно + печиво + напитка, така че дългата опашка от избор остава отворена.',
+  s6_t1:'Залог за бестселър',s6_n1:'Офис класика',
+  s6_i1a:'Пилешки wrap със зеленчуци (ToGo)',s6_i1b:'Маслен кроасан (пекарна)',s6_i1c:'Айран 500 мл',
+  s6_t2:'Традиционно',s6_n2:'Български обяд',
+  s6_i2a:'Шопска салата бокс (ToGo)',s6_i2b:'Баница със сирене (пекарна)',s6_i2c:'Боза / айран 500 мл',
+  s6_t3:'Gen-Z / енергия',s6_n3:'Енергиен брейк',
+  s6_i3a:'Протеиново пиле в кутия (ToGo)',s6_i3b:'Пълнозърнеста кифла (пекарна)',s6_i3c:'Енергийна напитка 250 мл',
+  s6_t4:'Вегетарианско',s6_n4:'Зелена кутия',
+  s6_i4a:'Салата с фалафел и хумус (ToGo)',s6_i4b:'Геврек със семена (пекарна)',s6_i4c:'Прясно изцеден сок 330 мл',
+  s6_t5:'Премиум ниво',s6_n5:'Грил оферта',
+  s6_i5a:'Порция пиле на грил (топъл щанд)',s6_i5b:'Половин франзела (пекарна)',s6_i5c:'Безалкохолна 500 мл',
+  s6_t6:'Сутрешен прозорец',s6_n6:'Закуска ToGo',
+  s6_i6a:'Сандвич с яйце и сирене (ToGo)',s6_i6b:'Какаов щрудел (пекарна)',s6_i6c:'Студено кафе 250 мл',
+  s6_deal449:'Оферта €4.49 · XTRA €3.99',
+  s6_deal599:'Оферта €5.99 · XTRA €5.49',
+  s6_src:'Цените са представителни текущи средни точки на BG рафта за илюстрация; финалният асортимент се определя от Покупки по клъстер магазини. Урок от Tesco 2025: топ комбо = пилешки сандвич + протеинова кутия + енергийна напитка; протеин и енергия теглят към млада градска аудитория, точно кохортата на делния обяд.',
+  s7_kicker:'Доказателствена база',
+  s7_h2:'Обядните комплекти са най-доказаната bundle механика в европейския ритейл',
+  s7_ch_h:'Стълбица на цените на обядните комплекти във Великобритания (GBP, 2025)',
+  s7_ch_cap:'20-годишна механика, която все още расте; Tesco промени цената два пъти от 2022, без докладван спад в обемите',
+  s7_vol_h:'Обемно доказателство',
+  s7_vol_p:'<b>Tesco Ирландия продава над 70 000 обядни комплекта седмично в 194 магазина</b> само през един доставчик (Freshways, €15M/год.). Данните на Tesco UK Clubcard нареждат обядния комплект сред най-честите покупки; ~80% от клиентите транзакцират идентифицирано.',
+  s7_beh_h:'Поведенчески механизми, които се пренасят в България',
+  s7_beh_p:'<b>1 · Attach:</b> фиксирана цена за триото превръща купувачите на един артикул в кошници с 3 артикула.<br><b>2 · Навик:</b> една цена, нулев разход за решение, ежедневна повторяемост; обядът е мисия 5 пъти седмично.<br><b>3 · Идентификация:</b> разликата само с карта прехвърля обядния трафик към XTRA и захранва AI купонния двигател с делнично поведение, което днес почти не виждаме.',
+  s7_win_h:'Конкурентен прозорец',
+  s7_win_p:'Нито една българска верига не предлага структуриран крос-категориен обяден комплект днес. Форматът на Lidl няма сервизни гишета или топли зони, за да го копира наравно. Първият задава референтната цена.',
+  s7_src:'Цени Tesco: BBC, авг. 2025. Обеми Ирландия: Business Plus, договор Freshways 2025. Проникване на Clubcard ~80%: BBC. Пазар UK FTG: Lumina Intelligence 2026. Конкурентен преглед: текущи промо програми на BG вериги, ян.–авг. 2026.',
+  s8_kicker:'Юнит икономика',
+  s8_h2:'€1.39 брутна печалба на комплект, 33% маржа, след финансиране на отстъпката',
+  s8_sub:'Отстъпката на комплекта е конструирана спрямо маржовете на компонентите: 65% при пекарната омекотява 33% при напитката, а брандираните доставчици съфинансират слота.',
+  s8_ch_h:'P&L мост на Classic комплект (€ на комплект, среден билет €4.19)',
+  s8_ch_cap:'Приемаме 60% от комплектите на XTRA цена €3.99, 40% на €4.49',
+  s8_th1:'Компонент',s8_th2:'Рафт',s8_th4:'Самостоятелна маржа',
+  s8_r1:'ToGo основно',s8_r2:'Печиво',s8_r3:'Напитка 500 мл',
+  s8_r4:'Комплект, бруто',s8_r5:'Съфинансиране от доставчик (слот напитки)',s8_r6:'Комплект при средно €4.19',
+  s8_callout:'<b>Съфинансирането от доставчици е стандартна практика:</b> слотовете за напитки в британските обядни комплекти се търгуват към марки (Red Bull измести Coca-Cola като №1 напитка в Tesco през 2025). Два ротиращи брандирани слота на тримесечие са нова търговска приходна линия за Покупки, консервативно моделирана на €0.30 на комплект.',
+  s8_src:'COGS: представителни маржове за fresh/FTG в BG модерна търговия; за валидиране спрямо вътрешния категорийен P&L в седмица 1 на проекта. Red Bull / Tesco: Clubcard Unpacked 2025, Express & Star.',
+  s9_kicker:'Финансова проекция',
+  s9_h2:'Базов сценарий: €8.3M приход през година 1, €10.7M на устойчиво ниво',
+  s9_ch_h:'Годишен приход по сценарий (€M)',
+  s9_ch_cap:'Година 1 = 8 пилотни магазина за 3 месеца, след това 71 магазина за 9 месеца · Устойчиво ниво = 71 магазина, цяла година',
+  s9_th1:'Допускане',s9_th2:'Конс.',s9_th3:'Базов',s9_th4:'Амб.',
+  s9_r1:'Комплекти / магазин / ден',
+  s9_r2:'= дял от ~3 000 дневни клиенти',
+  s9_r3:'Среден билет (60% XTRA микс)',
+  s9_r4:'Комплекти година 1 (млн.)',
+  s9_r5:'Приход година 1 (€M)',
+  s9_r6:'Брутна печалба година 1 @33% (€M)',
+  s9_r7:'БП след канибализация* (€M)',
+  s9_can_h:'Канибализацията е моделирана, не пренебрегната',
+  s9_can_p:'*Приемаме, че 45% от купувачите на комплекта така или иначе биха купили нещо (средно €2.90 при 30% маржа). Съществуващата им БП се приспада. Дори тогава комплектът качва кошница от €2.90 с един артикул към трио за €4.19, така че механиката е акретивна на транзакция във всеки сценарий.',
+  s9_src:'Дневни клиенти на магазин: ~1,5 млн. седмично ÷ 71 магазина ÷ 7 дни ≈ 3 000. Референция: Tesco Ирландия ≈ 52 Freshways комплекта/магазин/ден при частичен асортимент; UK convenience форматите са съществено по-високи. Чувствителност: ±10 комплекта/ден ≈ ±€1.07M приход на устойчиво ниво.',
+  s10_kicker:'Вторични ефекти',
+  s10_h2:'Комплектът е и инструмент за трафик, данни и микс на маржа',
+  s10_f_h:'Честота: истинската награда',
+  s10_f_p:'Обядът е мисия 5 пъти седмично; големият седмичен пазар е 1 път. Ако комплектът превърне <b>3% от над 1 млн. активни XTRA потребители в +2 допълнителни посещения на месец</b> и всяко носи само €2 извън комплекта, това е <b>~€1.4M/год. допълнителен halo приход</b> върху самия комплект.',
+  s10_d_h:'Данни: делнично поведение, което не виждаме',
+  s10_d_p:'Разликата от €0.50 с карта прехвърля обядните транзакции към XTRA. Всеки идентифициран комплект захранва съществуващия AI купонен двигател с ново поведенческо измерение (делник, час, предпочитание за хранене) и подобрява таргетирането на 10-те седмични персонализирани купона, които вече са в продукция.',
+  s10_w_h:'Фира: комплектите изчистват прясна стока',
+  s10_w_p:'ToGo витрината и пекарната носят най-високия риск от отписване в магазина. Предвидим дневен обем изглажда планирането на производството и може да абсорбира артикули с къс срок в групата на основните, с цел намаление на прясна фира с <b>1–2 пр. пункта</b> в двете категории.',
+  s10_ch_h:'Halo модел: базов сценарий, устойчиво ниво (€M / година)',
+  s10_ch_cap:'Приход от комплект + честотен halo + спестяване от фира, нетно от канибализация',
+  s10_src:'Halo сметка: 1 млн. MAU × 3% × 24 допълнителни посещения/год. × €2 ≈ €1.44M. Фира: BG бенчмаркове за прясна фира 3–6% от категорийните продажби; 1,5 пр. пункта върху ~€25M релевантни продажби ToGo+пекарна ≈ €0.4M. И двете се следят като пилотни KPI преди да се претендират.',
+  s11_kicker:'Системна интеграция',
+  s11_h2:'Това е промоция, не продукт: стандартен SAP, нула нови SKU',
+  s11_sub:'Комплектът се нанася 1:1 върху Mix-and-Match / Bonus Buy модела, който Schwarz SAP retail стекът поддържа стандартно. Компонентите запазват EAN, наличности и категорийния P&L.',
+  s11_f1_h:'Дефиниция на промоцията',
+  s11_f1_p:'Три групи компоненти (Основни / Пекарна / Напитки) като артикулни йерархии. Bonus Buy: „по 1 от всяка група → €4.49“; цена с карта €3.99. Собственост на Покупки, по клъстер магазини.',
+  s11_a1:'стандартна репликация<br>(offer/promo услуги, IDoc)',
+  s11_f2_h:'Изпълнение при сканиране',
+  s11_f2_p:'POS промо двигателят разпознава триото в кошницата и преоценява автоматично. Работи еднакво на каси с персонал и на самообслужване. Без обучение на касиери извън осведоменост.',
+  s11_a2:'качване на TLOG,<br>ниво бележка',
+  s11_f3_h:'Хъб за данни и аналитика',
+  s11_f3_p:'Attach на ниво бележка, микс на компоненти, час от деня, канибализация, фира. Отстъпката се разпределя пропорционално по компоненти и държи категорийния P&L чист. Захранва прогнозата за производство в пекарната.',
+  s11_a3:'сегменти и<br>купони',
+  s11_f4_h:'Loyalty слой',
+  s11_f4_p:'Цената с карта се прилага през съществуващото loyalty ценообразуване; AI купонният двигател таргетира отпаднали обядващи и ъпселва премиум нивото. Страница на офертата и вдъхновение за комбинации в приложението.',
+  s11_c1_h:'Защо нула нови SKU е важно',
+  s11_c1_p:'Без нови основни данни за артикули, без нови вериги на доставка, без двойна наличност. Промяна в асортимента = редакция на списък в група, не рестарт на продукт.',
+  s11_c2_h:'Чисто отчитане на маржа',
+  s11_c2_p:'Пропорционалното разпределение на отстъпката в транзакционния лог означава, че всяка категория (Fresh, Пекарна, Напитки) отчита истинска маржа след офертата. Без спорове по P&L между категорийни мениджъри.',
+  s11_c3_h:'Пасва на IT пътя на Schwarz',
+  s11_c3_p:'Schwarz IT вече оперира GK POS в цялата група и SAP CAR като ритейл хъб за данни; омниканалната ценова консистентност за приложението идва от същите промо обекти.',
+  s11_src:'Модел: SAP Retail Bonus Buy / Mix-and-Match със стандартна репликация на оферти към GK POS („SAP Store Solutions by GK“, стратегически POS партньор на SAP) и качване на бележки към SAP CAR. Връзка Schwarz IT / GK: корпоративни новини на GK Software; Retail Optimiser.',
+  s12_kicker:'Внедряване',
+  s12_h2:'Осем седмици до старт на пилота, само конфигурация',
+  s12_th1:'Седмици',s12_th2:'Работен поток',s12_th3:'Какво се прави',s12_th4:'Собственик',
+  s12_w1:'Групи компоненти',
+  s12_d1:'Дефиниране на списъци за Основни / Пекарна / Напитки в артикулната йерархия; валидиране на COGS по артикул спрямо категорийния P&L; заключване на ценовите нива.',
+  s12_o1:'Покупки + Master Data',
+  s12_w2:'Конфиг на промоцията',
+  s12_d2:'Настройка на Bonus Buy в S/4HANA Retail: условие за трио €4.49 / Премиум €5.99; XTRA цени с карта; валидност и обхват по клъстер магазини.',
+  s12_o2:'Екип Ценообразуване',
+  s12_w3:'POS репликация и тест',
+  s12_d3:'Репликация на офертите към POS в 8 пилотни магазина; регресия: каса с персонал, самообслужване, смесени кошници, връщания, бележка със спестяването.',
+  s12_w4:'CAR табла',
+  s12_d4:'Attach rate, комплекти/магазин/ден, микс на компоненти, heat map по час, панел канибализация, тракер за прясна фира. Дневно опресняване, готово за борда.',
+  s12_w5:'Приложение и лоялност',
+  s12_d5:'Плочка на офертата в приложението на Kaufland, показване на XTRA цена, стартов купон (първи комплект €2.99), аудитория за AI купонния двигател.',
+  s12_o5:'Маркетинг + Schwarz IT digital',
+  s12_w6:'Операции в магазина',
+  s12_d6:'Съседство: хладилник за напитки до ToGo витрината, рафт за пекарната оферта; единна сигнализация; производствен план на пекарната за обядния пик; инструктаж на персонала.',
+  s12_o6:'Store Ops (пилотен регион)',
+  s12_c1:'<b>Без custom разработка.</b> Всеки елемент по-горе е конфигурация или съдържание върху системи, които вече са в продукция. Единствената твърда зависимост е капацитетът за репликация на оферти в пилотния прозорец, за потвърждение със Schwarz IT през седмица 1.',
+  s12_c2:'<b style="color:var(--green)">Еднократна оценка на разхода: ~€180k</b> (табели и оборудване ~€120k за 8 магазина, проектен екип ~€60k). Възстановява се от базовата брутна печалба за под 6 седмици национална експлоатация.',
+  s12_src:'Оценките за усилия приемат стандартния процес за промени на Schwarz IT; за валидиране на kick-off. Разход за оборудване: €15k/магазин за съседство и сигнализация в зоната на входа, пилотна спецификация.',
+  s13_kicker:'Намаляване на риска',
+  s13_h2:'12-седмичен софийски пилот с твърди прагове, след това решение за разгръщане на база данни',
+  s13_st1_h:'Седмици 1–8 · Изграждане',
+  s13_st1_p:'Конфигурация, табла, оборудване в 8 софийски магазина (микс от офис-гъсти и жилищни зони за честен прочит).',
+  s13_st2_h:'Седмици 9–20 · Жив пилот',
+  s13_st2_p:'Дневно CAR табло; седмичен търговски преглед с Покупки; настройка на цена и асортимент само в седмици 12 и 16, за да остане тестът чист.',
+  s13_st3_h:'Седмица 21 · Gate преглед',
+  s13_st3_p:'Решение go / tune / stop спрямо KPI таблицата. Go = национално разгръщане в 2 вълни за 8 седмици, ~35 магазина на вълна.',
+  s13_st4_h:'Месец 9 · Цялата мрежа',
+  s13_st4_p:'Всички 71 магазина на живо; активирани премиум ниво и сутрешен прозорец; търг за слотове напитки за следващите две тримесечия.',
+  s13_th1:'Пилотен KPI (измерван в SAP CAR)',s13_th2:'Праг за разгръщане',
+  s13_k1:'Комплекти на магазин на ден, средно седм. 17–20',
+  s13_k2:'Смесена брутна маржа на комплект',
+  s13_k3:'Дял на XTRA карта в транзакциите с комплект',
+  s13_k4:'Нетна БП след измерена канибализация',
+  s13_k4n:'≥ €0.90 / комплект',
+  s13_k5:'Честота на посещения на купувачи на комплект срещу контролна кохорта',
+  s13_k5n:'+0.3 посещения / месец',
+  s13_k6:'Фира ToGo + пекарна срещу базова линия преди пилота',
+  s13_k6n:'≤ базова линия',
+  s13_q_h:'Какво трябва да отговори пилотът',
+  s13_q_p:'Истинският attach rate в българската пазарска култура, правилната разлика €3.99 срещу €4.49, делник срещу уикенд, и дали офис зоните се представят достатъчно по-добре, за да оправдаят диференциран асортимент. Всеки въпрос се връзва към табло, не към мнение.',
+  s13_src:'Контролна кохорта: съпоставени XTRA потребители в непилотни софийски магазини, следени чрез loyalty ID в CAR. Канибализацията се измерва като делта в самостоятелни ToGo/пекарна/напитка единици сред купувачите на комплект спрямо собствения им 12-седмичен период преди пилота.',
+  s14_kicker:'Решение',
+  s14_h2:'Молбата: одобрете пилота. Данните решават останалото.',
+  s14_a_h:'Одобрение',
+  s14_a_p:'Пилот в 8 софийски магазина, 12 седмици на живо, ~€180k еднократен бюджет и проектен екип от по един лийд от Покупки, Ценообразуване, Schwarz IT, BI и Store Ops.',
+  s14_g_h:'Получавате',
+  s14_g_p:'CAR табло, готово за борда от ден 1, gate преглед в седмица 21 с измерен attach, маржа, честота и канибализация, и остойностен план за национално разгръщане.',
+  s14_s_h:'На карта',
+  s14_s_p:'€10.7M приход на устойчиво ниво, ~€2.6M нетна брутна печалба с halo, нова приходна линия от доставчици и първата структурирана обядна оферта в българския ритейл, преди някой друг да я изгради.',
+  s14_close:'Kaufland вече притежава ToGo витрината, пекарната, реда с напитки, двигателя за лоялност и SAP стека, който ги свързва. Обядният комплект не е нов бизнес. <b style="color:#fff">Това е ценови сигнал, който кара пет съществуващи актива да работят като едно.</b>',
+  s14_src:'Контакт: [име на презентиращия] · Предложение v1.0 · август 2026 · Всички проекции подлежат на валидиране от пилота.'
+};
+const originals=new WeakMap();
+let snapped=false;
+function snapCopy(){
+  if(snapped) return;
+  document.querySelectorAll('[data-i18n]').forEach(el=>originals.set(el,el.textContent));
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>originals.set(el,el.innerHTML));
+  snapped=true;
+}
+function applyLang(lang){
+  snapCopy();
+  const bg=lang==='bg';
+  document.documentElement.lang=bg?'bg':'en';
+  document.title=bg?BG.doc_title:'Kaufland Bulgaria · Meal Deal Proposal';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    el.textContent=bg?(BG[key]??originals.get(el)):originals.get(el);
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const key=el.getAttribute('data-i18n-html');
+    el.innerHTML=bg?(BG[key]??originals.get(el)):originals.get(el);
+  });
+  document.querySelectorAll('[data-set-lang]').forEach(btn=>{
+    const on=btn.getAttribute('data-set-lang')===lang;
+    btn.classList.toggle('is-on',on);
+    btn.setAttribute('aria-pressed',on?'true':'false');
+  });
+  document.getElementById('prev').title=bg?'Назад':'Previous';
+  document.getElementById('next').title=bg?'Напред':'Next';
+  try{localStorage.setItem('kaufland-deck-lang',lang);}catch(e){/* ignore */}
+  const url=new URL(location.href);
+  if(bg) url.searchParams.set('lang','bg'); else url.searchParams.delete('lang');
+  history.replaceState(null,'',url.pathname+url.search+url.hash);
+  renderCharts(lang);
+}
+document.querySelectorAll('[data-set-lang]').forEach(btn=>{
+  btn.addEventListener('click',()=>applyLang(btn.getAttribute('data-set-lang')));
+});
+
 /* ---------- deck engine ---------- */
 const slides=[...document.querySelectorAll('.slide')];
 let cur=0;
@@ -649,9 +932,11 @@ function show(i){
   cur=Math.max(0,Math.min(slides.length-1,i));
   slides.forEach((sl,j)=>sl.classList.toggle('active',j===cur));
   document.getElementById('bar').style.width=((cur+1)/slides.length*100)+'%';
+  document.getElementById('langDock').hidden=cur===0;
 }
 addEventListener('resize',fit);
 addEventListener('keydown',e=>{
+  if(e.target&&e.target.closest&&e.target.closest('[data-set-lang]')) return;
   if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')show(cur+1);
   if(e.key==='ArrowLeft'||e.key==='PageUp')show(cur-1);
   if(e.key==='Home')show(0);
@@ -667,82 +952,106 @@ Chart.defaults.font.size=11.5;
 Chart.defaults.color='#3d4753';
 const RED='#E10915',INK='#12181f',GRAY='#9aa4b1',GREEN='#0e8a4d',BLUE='#1d5fbf',AMBER='#c47f00';
 const opts=(extra={})=>({responsive:false,animation:{duration:600},plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:12,boxHeight:12,padding:14,font:{weight:600}}},...(extra.plugins||{})},...extra});
-const eur=v=>'€'+v;
+const chartObjs=[];
+function renderCharts(lang){
+  const bg=lang==='bg';
+  chartObjs.splice(0).forEach(c=>c.destroy());
+  const L={
+    perStore:bg?['Kaufland (71 магазина)','Lidl (~134)','Billa (~140)']:['Kaufland (71 stores)','Lidl (~134)','Billa (~140)'],
+    perStoreDs:bg?'€M приход / магазин':'€M revenue / store',
+    wf:bg?['Поотделно','Обяден комплект','Комплект + XTRA']:['Bought separately','Meal Deal','Meal Deal + XTRA'],
+    wfMain:bg?'ToGo основно':'ToGo main',
+    wfBakery:bg?'Печиво':'Bakery item',
+    wfDrink:bg?'Напитка 500 мл':'Drink 500ml',
+    wfDeal:bg?'Цена на офертата':'Deal price',
+    benchDs:bg?'£ на обяден комплект, 2025':'£ per meal deal, 2025',
+    unit:bg?['Среден билет','COGS на компоненти','Съфинансиране','Брутна печалба']:['Avg ticket','Component COGS','Supplier funding','Gross profit'],
+    unitDs:bg?'€ на комплект':'€ per deal',
+    scen:bg?['Консервативен\n60 / ден','Базов\n100 / ден','Амбициозен\n150 / ден']:['Conservative\n60 / day','Base\n100 / day','Ambitious\n150 / day'],
+    scenY1:bg?'Година 1 (пилот + 9 месеца разгръщане)':'Year 1 (pilot + 9-month rollout)',
+    scenSS:bg?'Устойчиво ниво (71 магазина, цяла година)':'Steady state (71 stores, full year)',
+    halo:bg?['Стойност на устойчиво ниво, базов сценарий']:['Steady-state value, base case'],
+    halo1:bg?'Брутна печалба от комплект, нетно от канибализация (€2.6M)':'Deal gross profit, net of cannibalisation (€2.6M)',
+    halo2:bg?'Честотен halo приход @30% БП (€0.43M)':'Frequency halo revenue @30% GP (€0.43M)',
+    halo3:bg?'Намаление на прясна фира (€0.4M)':'Fresh shrink reduction (€0.4M)'
+  };
 
-/* 3 · revenue race */
-new Chart(chRace,{type:'bar',data:{
-  labels:['FY2023','FY2024'],
-  datasets:[
-    {label:'Kaufland BG',data:[1.227,1.306],backgroundColor:RED,borderRadius:6,barPercentage:.7},
-    {label:'Lidl BG',data:[1.145,1.325],backgroundColor:INK,borderRadius:6,barPercentage:.7},
-    {label:'Billa BG',data:[0.57,0.613],backgroundColor:GRAY,borderRadius:6,barPercentage:.7}
-  ]},
-  options:opts({scales:{y:{beginAtZero:true,max:1.5,ticks:{callback:v=>'€'+v.toFixed(1)+'bn'}},x:{grid:{display:false}}},
-  plugins:{tooltip:{callbacks:{label:c=>c.dataset.label+': €'+c.parsed.y.toFixed(3)+'bn'}}}})
-});
+  chartObjs.push(new Chart(chRace,{type:'bar',data:{
+    labels:['FY2023','FY2024'],
+    datasets:[
+      {label:'Kaufland BG',data:[1.227,1.306],backgroundColor:RED,borderRadius:6,barPercentage:.7},
+      {label:'Lidl BG',data:[1.145,1.325],backgroundColor:INK,borderRadius:6,barPercentage:.7},
+      {label:'Billa BG',data:[0.57,0.613],backgroundColor:GRAY,borderRadius:6,barPercentage:.7}
+    ]},
+    options:opts({scales:{y:{beginAtZero:true,max:1.5,ticks:{callback:v=>'€'+v.toFixed(1)+'bn'}},x:{grid:{display:false}}},
+    plugins:{tooltip:{callbacks:{label:c=>c.dataset.label+': €'+c.parsed.y.toFixed(3)+'bn'}}}})
+  }));
 
-/* 3 · per store */
-new Chart(chPerStore,{type:'bar',data:{
-  labels:['Kaufland (71 stores)','Lidl (~134)','Billa (~140)'],
-  datasets:[{label:'€M revenue / store',data:[18.4,9.9,4.4],backgroundColor:[RED,INK,GRAY],borderRadius:6,barPercentage:.65}]},
-  options:opts({indexAxis:'y',plugins:{legend:{display:false}},
-  scales:{x:{beginAtZero:true,max:20,ticks:{callback:v=>'€'+v+'M'}},y:{grid:{display:false},ticks:{font:{weight:700}}}}})
-});
+  chartObjs.push(new Chart(chPerStore,{type:'bar',data:{
+    labels:L.perStore,
+    datasets:[{label:L.perStoreDs,data:[18.4,9.9,4.4],backgroundColor:[RED,INK,GRAY],borderRadius:6,barPercentage:.65}]},
+    options:opts({indexAxis:'y',plugins:{legend:{display:false}},
+    scales:{x:{beginAtZero:true,max:20,ticks:{callback:v=>'€'+v+'M'}},y:{grid:{display:false},ticks:{font:{weight:700}}}}})
+  }));
 
-/* 5 · price architecture */
-new Chart(chWaterfall,{type:'bar',data:{
-  labels:['Bought separately','Meal Deal','Meal Deal + XTRA'],
-  datasets:[
-    {label:'ToGo main',data:[2.99,null,null],backgroundColor:RED,stack:'a',borderRadius:4},
-    {label:'Bakery item',data:[1.29,null,null],backgroundColor:AMBER,stack:'a',borderRadius:4},
-    {label:'Drink 500ml',data:[1.49,null,null],backgroundColor:BLUE,stack:'a',borderRadius:4},
-    {label:'Deal price',data:[null,4.49,3.99],backgroundColor:INK,stack:'a',borderRadius:6}
-  ]},
-  options:opts({scales:{y:{beginAtZero:true,max:6.2,ticks:{callback:v=>'€'+v.toFixed(2)}},x:{grid:{display:false},ticks:{font:{weight:700}}}},
-  plugins:{tooltip:{callbacks:{label:c=>c.dataset.label+': €'+c.parsed.y.toFixed(2)}}}})
-});
+  chartObjs.push(new Chart(chWaterfall,{type:'bar',data:{
+    labels:L.wf,
+    datasets:[
+      {label:L.wfMain,data:[2.99,null,null],backgroundColor:RED,stack:'a',borderRadius:4},
+      {label:L.wfBakery,data:[1.29,null,null],backgroundColor:AMBER,stack:'a',borderRadius:4},
+      {label:L.wfDrink,data:[1.49,null,null],backgroundColor:BLUE,stack:'a',borderRadius:4},
+      {label:L.wfDeal,data:[null,4.49,3.99],backgroundColor:INK,stack:'a',borderRadius:6}
+    ]},
+    options:opts({scales:{y:{beginAtZero:true,max:6.2,ticks:{callback:v=>'€'+v.toFixed(2)}},x:{grid:{display:false},ticks:{font:{weight:700}}}},
+    plugins:{tooltip:{callbacks:{label:c=>c.dataset.label+': €'+c.parsed.y.toFixed(2)}}}})
+  }));
 
-/* 7 · benchmark ladder */
-new Chart(chBench,{type:'bar',data:{
-  labels:['Tesco (Clubcard)','Sainsbury\u2019s','Tesco (standard)','Boots (avg)','Tesco Premium (CC)','Tesco Premium (std)'],
-  datasets:[{label:'£ per meal deal, 2025',data:[3.85,3.95,4.25,4.35,5.50,6.00],
-    backgroundColor:[RED,GRAY,RED,GRAY,INK,INK],borderRadius:6,barPercentage:.65}]},
-  options:opts({indexAxis:'y',plugins:{legend:{display:false}},
-  scales:{x:{beginAtZero:true,max:7,ticks:{stepSize:1,callback:v=>'£'+v.toFixed(2)}},y:{grid:{display:false},ticks:{font:{weight:600},autoSkip:false}}}})
-});
+  chartObjs.push(new Chart(chBench,{type:'bar',data:{
+    labels:['Tesco (Clubcard)','Sainsbury\u2019s','Tesco (standard)','Boots (avg)','Tesco Premium (CC)','Tesco Premium (std)'],
+    datasets:[{label:L.benchDs,data:[3.85,3.95,4.25,4.35,5.50,6.00],
+      backgroundColor:[RED,GRAY,RED,GRAY,INK,INK],borderRadius:6,barPercentage:.65}]},
+    options:opts({indexAxis:'y',plugins:{legend:{display:false}},
+    scales:{x:{beginAtZero:true,max:7,ticks:{stepSize:1,callback:v=>'£'+v.toFixed(2)}},y:{grid:{display:false},ticks:{font:{weight:600},autoSkip:false}}}})
+  }));
 
-/* 8 · unit econ bridge */
-new Chart(chUnit,{type:'bar',data:{
-  labels:['Avg ticket','Component COGS','Supplier funding','Gross profit'],
-  datasets:[{label:'€ per deal',
-    data:[4.19,-3.10,0.30,1.39],
-    backgroundColor:[INK,'#c9515a',GREEN,RED],borderRadius:6,barPercentage:.6}]},
-  options:opts({plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'€'+c.parsed.y.toFixed(2)}}},
-  scales:{y:{ticks:{callback:v=>'€'+v.toFixed(1)},grid:{color:'#eef1f4'}},x:{grid:{display:false},ticks:{font:{weight:700}}}}})
-});
+  chartObjs.push(new Chart(chUnit,{type:'bar',data:{
+    labels:L.unit,
+    datasets:[{label:L.unitDs,
+      data:[4.19,-3.10,0.30,1.39],
+      backgroundColor:[INK,'#c9515a',GREEN,RED],borderRadius:6,barPercentage:.6}]},
+    options:opts({plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'€'+c.parsed.y.toFixed(2)}}},
+    scales:{y:{ticks:{callback:v=>'€'+v.toFixed(1)},grid:{color:'#eef1f4'}},x:{grid:{display:false},ticks:{font:{weight:700}}}}})
+  }));
 
-/* 9 · scenarios */
-new Chart(chScen,{type:'bar',data:{
-  labels:['Conservative\n60 / day','Base\n100 / day','Ambitious\n150 / day'],
-  datasets:[
-    {label:'Year 1 (pilot + 9-month rollout)',data:[5.0,8.3,12.5],backgroundColor:GRAY,borderRadius:6,barPercentage:.72},
-    {label:'Steady state (71 stores, full year)',data:[6.4,10.7,16.1],backgroundColor:RED,borderRadius:6,barPercentage:.72}
-  ]},
-  options:opts({scales:{y:{beginAtZero:true,max:18,ticks:{callback:v=>'€'+v+'M'}},x:{grid:{display:false},ticks:{font:{weight:700}}}},
-  plugins:{tooltip:{callbacks:{label:c=>c.dataset.label+': €'+c.parsed.y.toFixed(1)+'M'}}}})
-});
+  chartObjs.push(new Chart(chScen,{type:'bar',data:{
+    labels:L.scen,
+    datasets:[
+      {label:L.scenY1,data:[5.0,8.3,12.5],backgroundColor:GRAY,borderRadius:6,barPercentage:.72},
+      {label:L.scenSS,data:[6.4,10.7,16.1],backgroundColor:RED,borderRadius:6,barPercentage:.72}
+    ]},
+    options:opts({scales:{y:{beginAtZero:true,max:18,ticks:{callback:v=>'€'+v+'M'}},x:{grid:{display:false},ticks:{font:{weight:700}}}},
+    plugins:{tooltip:{callbacks:{label:c=>c.dataset.label+': €'+c.parsed.y.toFixed(1)+'M'}}}})
+  }));
 
-/* 10 · halo stack */
-new Chart(chHalo,{type:'bar',data:{
-  labels:['Steady-state value, base case'],
-  datasets:[
-    {label:'Deal gross profit, net of cannibalisation (€2.6M)',data:[2.6],backgroundColor:RED,borderRadius:4,barPercentage:.45},
-    {label:'Frequency halo revenue @30% GP (€0.43M)',data:[0.43],backgroundColor:BLUE,borderRadius:4,barPercentage:.45},
-    {label:'Fresh shrink reduction (€0.4M)',data:[0.4],backgroundColor:GREEN,borderRadius:4,barPercentage:.45}
-  ]},
-  options:opts({scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true,max:4,ticks:{callback:v=>'€'+v.toFixed(1)+'M'}}},
-  plugins:{tooltip:{callbacks:{label:c=>c.dataset.label}},legend:{position:'bottom',labels:{boxWidth:12,padding:10,font:{weight:600,size:11}}}}})
-});
+  chartObjs.push(new Chart(chHalo,{type:'bar',data:{
+    labels:L.halo,
+    datasets:[
+      {label:L.halo1,data:[2.6],backgroundColor:RED,borderRadius:4,barPercentage:.45},
+      {label:L.halo2,data:[0.43],backgroundColor:BLUE,borderRadius:4,barPercentage:.45},
+      {label:L.halo3,data:[0.4],backgroundColor:GREEN,borderRadius:4,barPercentage:.45}
+    ]},
+    options:opts({scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true,max:4,ticks:{callback:v=>'€'+v.toFixed(1)+'M'}}},
+    plugins:{tooltip:{callbacks:{label:c=>c.dataset.label}},legend:{position:'bottom',labels:{boxWidth:12,padding:10,font:{weight:600,size:11}}}}})
+  }));
+}
+
+const startLang=(()=>{
+  const q=new URLSearchParams(location.search).get('lang');
+  if(q==='bg'||q==='en') return q;
+  try{const s=localStorage.getItem('kaufland-deck-lang'); if(s==='bg'||s==='en') return s;}catch(e){/* ignore */}
+  return 'en';
+})();
+applyLang(startLang);
 </script>
 </body>
 </html>

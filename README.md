@@ -8,6 +8,7 @@ Stephan Lüger, Commercial Director and Management Board member.
 
 Open `index.html` in any browser. No build step, no server.
 
+- Language: EN / БГ toggle on the title slide (and a compact control on later slides). Choice is remembered, or pass `?lang=bg`
 - Navigate: `←` `→` arrow keys, `Space`, `PageUp`/`PageDown`, `Home`/`End`, or the on-screen arrows
 - Charts render via Chart.js 4.4.7 (CDN); Inter font via Google Fonts (CDN). Internet required on first load.
 
