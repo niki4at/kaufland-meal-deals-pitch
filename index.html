@@ -129,9 +129,6 @@
 
   kbd{background:#eef1f4;border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:11px;font-family:inherit;font-weight:700}
 
-  .title-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
-  .lang-hero{display:flex;align-items:center;gap:12px;margin-bottom:36px}
-  .lang-hero-label{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9aa4b1;white-space:nowrap}
   .lang-seg{display:inline-flex;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.22);border-radius:999px;padding:3px}
   .lang-seg button{
     border:0;background:transparent;color:#c5ced8;cursor:pointer;
@@ -141,13 +138,10 @@
   .lang-seg button.is-on{background:#fff;color:#12181f}
   .lang-seg button:focus-visible{outline:2px solid #ff5a63;outline-offset:2px}
   #langDock{
-    position:fixed;top:14px;left:14px;z-index:50;
-    display:flex;align-items:center;gap:8px;
+    position:fixed;top:14px;right:max(8px,env(safe-area-inset-right,0px));z-index:50;
   }
-  #langDock[hidden]{display:none}
-  #langDock .lang-dock-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#9aa4b1}
   #langDock .lang-seg{background:#12181f;border-color:rgba(255,255,255,.25);box-shadow:0 2px 8px rgba(0,0,0,.35)}
-  #langDock .lang-seg button{color:#fff;padding:6px 12px;font-size:12px}
+  #langDock .lang-seg button{color:#fff;padding:6px 11px;font-size:12px}
   #langDock .lang-seg button.is-on{background:var(--red);color:#fff;border-color:var(--red)}
 </style>
 </head>
@@ -158,16 +152,7 @@
 <!-- ═══════════════ 1 · TITLE ═══════════════ -->
 <section class="slide dark">
   <div class="title-wrap">
-    <div class="title-top">
-      <div class="logo-k"><div class="k">K</div><span>Kaufland България</span></div>
-      <div class="lang-hero">
-        <span class="lang-hero-label" data-i18n="lang_label">Language</span>
-        <div class="lang-seg" role="group" aria-label="Language">
-          <button type="button" data-set-lang="en" class="is-on" aria-pressed="true">EN</button>
-          <button type="button" data-set-lang="bg" aria-pressed="false">БГ</button>
-        </div>
-      </div>
-    </div>
+    <div class="logo-k"><div class="k">K</div><span>Kaufland България</span></div>
     <div class="kicker" data-i18n="s1_kicker">Commercial proposal · Confidential</div>
     <h1 data-i18n-html="s1_h1">The Kaufland Meal Deal.<br><span style="color:#ff5a63">One price. Three zones. A new daily mission.</span></h1>
     <p style="font-size:19px;color:#b9c1cc;margin-top:22px;max-width:820px;line-height:1.5" data-i18n="s1_lead">
@@ -665,9 +650,8 @@
 
 </div>
 
-<div id="langDock" hidden>
-  <span class="lang-dock-label" data-i18n="lang_label">Language</span>
-  <div class="lang-seg" role="group" aria-label="Language">
+<div id="langDock">
+  <div class="lang-seg" role="group" aria-label="EN / BG">
     <button type="button" data-set-lang="en" class="is-on" aria-pressed="true">EN</button>
     <button type="button" data-set-lang="bg" aria-pressed="false">БГ</button>
   </div>
@@ -681,7 +665,6 @@
 /* ---------- i18n ---------- */
 const BG={
   doc_title:'Kaufland България · Предложение за обяден комплект',
-  lang_label:'Език',
   s1_kicker:'Търговско предложение · Поверително',
   s1_h1:'Обядът на Kaufland.<br><span style="color:#ff5a63">Една цена. Три зони. Нова ежедневна мисия.</span>',
   s1_lead:'Обединяваме ToGo витрината, пекарната в магазина и реда с напитки в една фиксирана обядна оферта. Работи изцяло върху съществуващия SAP промо стек, без нови SKU (артикулни номера).',
@@ -929,7 +912,7 @@ document.querySelectorAll('[data-set-lang]').forEach(btn=>{
 const slides=[...document.querySelectorAll('.slide')];
 let cur=0;
 function fit(){
-  const gutter=56;
+  const gutter=88;
   const s=Math.min((innerWidth-gutter)/1280,innerHeight/720);
   const x=(innerWidth-gutter-1280*s)/2;
   const y=(innerHeight-720*s)/2;
@@ -939,7 +922,6 @@ function show(i){
   cur=Math.max(0,Math.min(slides.length-1,i));
   slides.forEach((sl,j)=>sl.classList.toggle('active',j===cur));
   document.getElementById('bar').style.width=((cur+1)/slides.length*100)+'%';
-  document.getElementById('langDock').hidden=cur===0;
 }
 addEventListener('resize',fit);
 addEventListener('keydown',e=>{
