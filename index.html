@@ -82,14 +82,20 @@
     width:36px;height:56px;padding:0;margin:0;
     display:flex;align-items:center;justify-content:center;
     cursor:pointer;box-shadow:none;
+    -webkit-tap-highlight-color:transparent;touch-action:manipulation;
   }
   body.nav-dark #prev,body.nav-dark #next{
     background:#14181e;border-color:#14181e;color:#fff;
   }
   #prev{left:0;border-radius:0 10px 10px 0;border-left:none}
   #next{right:0;border-radius:10px 0 0 10px;border-right:none}
-  #prev:hover,#next:hover,body.nav-dark #prev:hover,body.nav-dark #next:hover{
+  #prev:active,#next:active,body.nav-dark #prev:active,body.nav-dark #next:active{
     background:var(--red);border-color:var(--red);color:#fff;
+  }
+  @media (hover:hover){
+    #prev:hover,#next:hover,body.nav-dark #prev:hover,body.nav-dark #next:hover{
+      background:var(--red);border-color:var(--red);color:#fff;
+    }
   }
   #prev svg,#next svg{width:16px;height:16px;display:block}
   @media (max-width:720px){
@@ -955,8 +961,8 @@ addEventListener('keydown',e=>{
   if(e.key==='Home')show(0);
   if(e.key==='End')show(slides.length-1);
 });
-document.getElementById('next').onclick=()=>show(cur+1);
-document.getElementById('prev').onclick=()=>show(cur-1);
+document.getElementById('next').onclick=function(){show(cur+1);this.blur();};
+document.getElementById('prev').onclick=function(){show(cur-1);this.blur();};
 fit();show(0);
 
 /* ---------- charts ---------- */
