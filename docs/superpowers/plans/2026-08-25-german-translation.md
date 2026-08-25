@@ -184,7 +184,7 @@ git diff --check
 
 Expected: the localization contract prints its pass message and every command exits 0.
 
-- [ ] **Step 3: Commit and push documentation**
+- [x] **Step 3: Commit and push documentation**
 
 ```bash
 git add README.md docs/superpowers/plans/2026-08-25-german-translation.md
