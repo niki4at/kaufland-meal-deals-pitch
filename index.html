@@ -179,8 +179,9 @@
         </g>
       </svg>
     </div>
-      <div class="lang-seg" role="group" aria-label="EN / BG">
+      <div class="lang-seg" role="group" aria-label="EN / DE / BG">
         <button type="button" data-set-lang="en" class="is-on" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
         <button type="button" data-set-lang="bg" aria-pressed="false">БГ</button>
       </div>
     </div>
@@ -690,6 +691,213 @@
 
 <script>
 /* ---------- i18n ---------- */
+const DE={
+  doc_title:'Kaufland Bulgarien · Vorschlag für ein Mittagsmenü',
+  s1_kicker:'Vertriebsvorschlag · Vertraulich',
+  s1_h1:'Das Kaufland Mittagsmenü.<br><span style="color:#ff5a63">Ein Preis. Drei Bereiche. Ein neuer täglicher Einkaufsanlass.</span>',
+  s1_lead:'Kombiniert die ToGo-Theke, die hauseigene Bäckerei und das Getränkeregal zu einem Mittagsmenü mit Festpreis – läuft vollständig auf dem bestehenden SAP-Promotion-Stack, ohne neue SKU (Artikelnummern).',
+  s1_for:'Erstellt für',
+  s1_for_val:'Stephan Lüger · Handelsdirektor,<br>Mitglied des Vorstands',
+  s1_scope:'Umfang',
+  s1_scope_val:'71 Hypermärkte · 35 Städte<br>~1,5 Mio. Kunden pro Woche',
+  s1_base:'Basisszenario, Jahr 1',
+  s1_base_val:'€8.3M Umsatz · €2.8M Bruttogewinn<br>12-wöchiger Pilot vor dem Rollout',
+  s1_src:'Navigation mit den Pfeiltasten <span style="color:#9aa4b1">←  →</span>. Alle Beträge in EUR, sofern nicht anders angegeben. Quellen pro Folie angegeben.',
+  s2_kicker:'Zusammenfassung',
+  s2_h2:'Der Vorschlag in vier Zahlen',
+  s2_sub:'Hauptgericht von der ToGo-Theke + Backware + Getränk = <b>€4.49</b>, mit Kaufland Card XTRA <b>€3.99</b>.',
+  s2_c1_h:'Umsatz Jahr 1, Basisszenario',
+  s2_c1_p:'100 Menüs pro Filiale und Tag nach dem bundesweiten Rollout ab Monat 4. Im Regelbetrieb: €10.7M pro Jahr.',
+  s2_c2_h:'Bruttomarge pro Menü',
+  s2_c2_p:'€1.39 Bruttogewinn bei einem durchschnittlichen Bon von €4.19, nach Lieferanten-Kofinanzierung von €0.30 für Markengetränke.',
+  s2_c3_h:'Benötigte neue SKU (Artikelnummern)',
+  s2_c3_p:'Läuft als Mix-and-Match Bonus Buy in SAP Retail. Komponenten behalten ihre EAN, ihren Bestand und ihre Kategorie-GuV.',
+  s2_c4_h:'Zeit bis zum Pilotstart',
+  s2_weeks:' Wochen',
+  s2_c4_p:'Nur Konfiguration und Inhalte, keine Individualentwicklung. Pilot in 8 Filialen in Sofia, 12 Wochen, feste KPI-Grenzwerte (Leistungskennzahlen).',
+  s2_callout:'<b>Warum jetzt:</b> Lidl hat Kaufland 2024 beim Umsatz in Bulgarien überholt, nach 13 Jahren Kaufland-Marktführerschaft. Wir gewinnen nicht, indem wir schneller neue Filialen eröffnen. Wir gewinnen, indem wir einen Einkaufsanlass monetarisieren, den das Lidl-Format nicht bedienen kann: das Mittagessen an Wochentagen, mit Ressourcen, die wir bereits in jeder Filiale betreiben.',
+  s2_src:'Umsatzvergleich: Coface-Umsatzanalyse 2024 via Mediapool; Capital weekly. Menü-Kalkulation: dieser Vorschlag, Annahmen auf Folie 9.',
+  s3_kicker:'Marktumfeld',
+  s3_h2:'2024: Lidl übernahm Platz 1. Unsere Antwort ist Umsatz pro Filiale, nicht Filialanzahl.',
+  s3_sub:'Kaufland kann mit Lidls Expansionstempo nicht mitziehen (71 gegenüber ~134 Filialen). Kaufland erwirtschaftet pro Filiale bereits ~1,9-mal mehr als Lidl; der Wachstumshebel liegt in mehr Umsatz je Besuch und mehr Besuchen pro Woche.',
+  s3_ch1_h:'Lebensmittelumsatz, Bulgarien (€ Mrd.)',
+  s3_ch1_cap:'Lidl beendet Kauflands 13-jährige Marktführerschaft im FY2024',
+  s3_ch2_h:'Umsatz pro Filiale, FY2024 (€M, geschätzt)',
+  s3_ch2_cap:'Kauflands Filialdichte ist der strukturelle Vorteil',
+  s3_imp_h:'Fazit',
+  s3_imp_p:'Jedes zusätzliche 1% der wöchentlichen Kundenfrequenz, das in einen Mittagsbon von €4.19 umgewandelt wird, bringt <b>~€3.3M Umsatz pro Jahr</b> über alle 71 Filialen, ohne Investitionen in neue Standorte.',
+  s3_src:'FY2024: Lidl BG €1.325bn, Kaufland BG €1.306bn (Coface via Mediapool, 2025). FY2023: Kaufland führte mit 160 Mio. BGN bei 2,4 Mrd. BGN (Capital). Filialzahlen: Kaufland 71, Lidl ~134 (ESM, Unternehmensangaben). Pro Filiale = Umsatz ÷ Filialen. Billa: ~€613M, ~140 Filialen (geschätzt).',
+  s4_kicker:'Die Chance',
+  s4_h2:'Wir besitzen bereits alle drei Bausteine. Nur verkaufen wir sie nie gemeinsam.',
+  s4_sub:'Food-to-go ist die am schnellsten monetarisierbare Mission im europäischen Lebensmittelhandel und wächst durch Bundles, nicht durch Kundenfrequenz.',
+  s4_a1:'Baustein 1',s4_a2:'Baustein 2',s4_a3:'Baustein 3',
+  s4_a1_h:'ToGo-Theke (Grab-and-Go)',
+  s4_a1_big:'100+ Artikel',
+  s4_a1_p:'Fertig- und Halbfertiggerichte am Eingang jeder modernisierten Filiale. Sandwiches, Wraps, Salate, warme Snacks. Heute werden Einzelartikel zum vollen Preis ohne Zusatzverkaufsmechanik verkauft.',
+  s4_a2_h:'Hauseigene Bäckerei',
+  s4_a2_big:'60%+ Marge',
+  s4_a2_p:'Frische Bake-off-Backwaren im gesamten Filialnetz, die margenstärkste Frischekategorie im Markt. Banitsa, Croissants, Brezeln und Desserts sind natürliche Mittagsbegleiter mit nahezu keinen zusätzlichen Platzierungskosten.',
+  s4_a3_h:'Getränke + XTRA',
+  s4_a3_big:'1 Mio. MAU',
+  s4_a3_p:'Kühlgetränke mit starker Bereitschaft der Lieferanten zur Kofinanzierung, plus Kaufland Card XTRA: über 2 Mio. registrierte Nutzer, über 1 Mio. MAU (monatlich aktive Nutzer) und eine KI-Engine, die bereits 10 personalisierte Coupons pro Woche versendet.',
+  s4_gap:'<b>Die Lücke:</b> kein fester Mittagspreis, kein bereichsübergreifendes Bundle, kein Gewohnheitskreislauf. Ein Kunde, der heute einen Wrap für €2.99 kauft, lässt bei jedem Besuch mehr als €2 an zusätzlichem Umsatzpotenzial ungenutzt.',
+  s4_bench:'<b style="color:var(--green)">Der Vergleichswert:</b> Food-to-go im UK erreicht 2026 £24.9bn (+3.4%); der Bon pro Besuch steigt um +8.5% gegenüber dem Vorjahr, getrieben von strukturierten Bundles und Zusatzkäufen statt von mehr Kundenfrequenz (Lumina Intelligence).',
+  s4_src:'ToGo-Konzept: Filialkommunikation von Kaufland BG, über 100 Fertig-/Halbfertigartikel im Eingangsbereich. Loyalty: Kaufland Card XTRA, über 2 Mio. registriert, über 1 Mio. monatlich aktiv (Unternehmensangaben, Mai 2026). UK FTG: Lumina-Intelligence-Prognose 2026.',
+  s5_kicker:'Unser Vorschlag',
+  s5_h2:'Die Mechanik: 1 Hauptgericht + 1 Backware + 1 Getränk, ein Festpreis',
+  s5_sub:'Der Kunde wählt je einen Artikel aus drei klar gekennzeichneten Gruppen. Das POS (Kassensystem) erkennt das Trio automatisch beim Scannen und passt den Warenkorbpreis an. Keine Coupons, keine Barcodes, keine Aktion an der Kasse.',
+  s5_th1:'Stufe',s5_th2:'Inhalt',s5_th3:'Regalpreis',s5_th4:'Angebot',s5_th5:'XTRA-Karte',
+  s5_classic:'ToGo-Hauptgericht + Backware + Getränk 500 ml',
+  s5_premium:'Premium',
+  s5_premium_c:'Warmes Hauptgericht (Grill / Bowl) + Backware + Getränk',
+  s5_save_h:'Kundenersparnis',s5_save_p:'gegenüber dem Einzelkauf der drei Artikel',
+  s5_gap_h:'Kartenvorteil',s5_gap_p:'fördert XTRA-Anmeldungen und identifizierte Transaktionen',
+  s5_avail_h:'Verfügbarkeit',s5_avail_p:'ganztägig, Stoßzeiten-Besetzung 11:30–14:30 Uhr',
+  s5_ch_h:'Preisaufbau des Classic-Menüs (€)',
+  s5_ch_cap:'Regalsumme einzeln vs. Angebotspreis vs. Kartenpreis',
+  s5_src:'Referenzpreise der Komponenten: ToGo-Hauptgericht €2.99, Backware €1.29, Getränk €1.49 (repräsentative Mittelwerte aktueller BG-Regalpreise). Tesco-Äquivalent: £3.85 Clubcard / £4.25 Standard; Premium-Stufe £5.50 / £6.00 (Aug. 2025).',
+  s6_kicker:'Das Angebot im Regal',
+  s6_h2:'Sechs Start-Kombinationen aus Artikeln, die wir bereits verkaufen',
+  s6_sub:'Kuratierte Kombinationen für Beschilderung und App; die Mechanik selbst akzeptiert jede Kombination aus Hauptgericht + Backware + Getränk, sodass die Long-Tail-Auswahl offen bleibt.',
+  s6_t1:'Bestseller-Wette',s6_n1:'Büro-Klassiker',
+  s6_i1a:'Hähnchen-Gemüse-Wrap (ToGo)',s6_i1b:'Butter-Croissant (Bäckerei)',s6_i1c:'Ayran 500 ml',
+  s6_t2:'Traditionell',s6_n2:'Bulgarisches Mittagessen',
+  s6_i2a:'Schopska-Salat-Box (ToGo)',s6_i2b:'Banitsa mit Käse (Bäckerei)',s6_i2c:'Boza / Ayran 500 ml',
+  s6_t3:'Gen Z / Energie',s6_n3:'Energie-Pause',
+  s6_i3a:'Protein-Hähnchen-Topf (ToGo)',s6_i3b:'Vollkornbrötchen (Bäckerei)',s6_i3c:'Energydrink 250 ml',
+  s6_t4:'Vegetarisch',s6_n4:'Grüne Box',
+  s6_i4a:'Falafel-Hummus-Salat (ToGo)',s6_i4b:'Saatenbrezel (Bäckerei)',s6_i4c:'Frischer Saft 330 ml',
+  s6_t5:'Premium-Stufe',s6_n5:'Heißes Grill-Menü',
+  s6_i5a:'Portion Grillhähnchen (Warmtheke)',s6_i5b:'Halbes frisches Baguette (Bäckerei)',s6_i5c:'Softdrink 500 ml',
+  s6_t6:'Morgenfenster',s6_n6:'ToGo-Frühstück',
+  s6_i6a:'Ei-Käse-Sandwich (ToGo)',s6_i6b:'Kakao-Schnecke (Bäckerei)',s6_i6c:'Iced Coffee 250 ml',
+  s6_deal449:'Angebot €4.49 · XTRA €3.99',
+  s6_deal599:'Angebot €5.99 · XTRA €5.49',
+  s6_src:'Preise sind repräsentative aktuelle BG-Regalmittelwerte zur Illustration; das finale Sortiment legt der Einkauf je Filialcluster fest. Erkenntnis von Tesco 2025: Top-Kombination = Hähnchensandwich + Protein-Topf + Energydrink; Protein und Energie sprechen ein junges, urbanes Publikum an – genau die Zielgruppe des Wochentags-Mittagessens.',
+  s7_kicker:'Beweisgrundlage',
+  s7_h2:'Mittagsmenüs sind die am besten belegte Bundle-Mechanik im europäischen Lebensmittelhandel',
+  s7_ch_h:'Preisstaffelung britischer Mittagsmenüs (GBP, 2025)',
+  s7_ch_cap:'Eine 20 Jahre alte Mechanik, die noch immer wächst; Tesco hat seit 2022 zweimal die Preise angepasst, ohne gemeldete Mengeneinbußen',
+  s7_vol_h:'Mengennachweis',
+  s7_vol_p:'<b>Tesco Irland verkauft über 70.000 Mittagsmenüs pro Woche in 194 Filialen</b> allein über einen Lieferantenvertrag (Freshways, €15M/Jahr). Die Clubcard-Daten von Tesco UK stufen das Mittagsmenü unter die Käufe mit der höchsten Kauffrequenz ein; ~80% der Kunden kaufen identifiziert ein.',
+  s7_beh_h:'Verhaltensmechanismen, die sich auf Bulgarien übertragen lassen',
+  s7_beh_p:'<b>1 · Attach:</b> ein fester Trio-Preis macht aus Einzelartikel-Käufern Warenkörbe mit drei Artikeln.<br><b>2 · Gewohnheit:</b> ein Preis, kein Entscheidungsaufwand, tägliche Wiederholbarkeit; Mittagessen ist eine 5x/Woche-Mission.<br><b>3 · Identifikation:</b> eine nur mit Karte geltende Preislücke verlagert den Mittagsverkehr auf XTRA und versorgt die KI-Coupon-Engine mit Wochentagsverhalten, das wir derzeit nie beobachten.',
+  s7_win_h:'Wettbewerbsfenster',
+  s7_win_p:'Kein bulgarischer Händler bietet heute ein strukturiertes, bereichsübergreifendes Mittagsmenü an. Das Lidl-Format hat keine Bedientheken oder Warmzonen, um gleichwertig nachzuziehen. Wer zuerst startet, setzt den Referenzpreis.',
+  s7_src:'Tesco-Preise: BBC, Aug. 2025. Volumen Irland: Business Plus, Freshways-Vertrag 2025. Clubcard-Durchdringung ~80%: BBC. UK-FTG-Markt: Lumina Intelligence 2026. Wettbewerbsanalyse: aktuelle Promotionsprogramme bulgarischer Ketten, Jan.–Aug. 2026.',
+  s8_kicker:'Stückkalkulation',
+  s8_h2:'€1.39 Bruttogewinn pro Menü, 33% Marge, nach Finanzierung des Rabatts',
+  s8_sub:'Der Bundle-Rabatt ist gegen die Margen der Komponenten kalkuliert: die 65% der Bäckerei federn die 33% des Getränks ab, und Markenlieferanten kofinanzieren den Slot.',
+  s8_ch_h:'GuV-Brücke des Classic-Menüs (€ pro Menü, Ø-Bon €4.19)',
+  s8_ch_cap:'Annahme: 60% der Menüs zum XTRA-Preis €3.99, 40% zu €4.49',
+  s8_th1:'Komponente',s8_th2:'Regal',s8_th4:'Einzelmarge',
+  s8_r1:'ToGo-Hauptgericht',s8_r2:'Backware',s8_r3:'Getränk 500 ml',
+  s8_r4:'Bundle, brutto',s8_r5:'Lieferanten-Kofinanzierung (Getränke-Slot)',s8_r6:'Menü bei Ø €4.19',
+  s8_callout:'<b>Lieferantenfinanzierung ist gängige Praxis:</b> Getränke-Slots in britischen Mittagsmenüs werden an Marken versteigert (Red Bull verdrängte 2025 Coca-Cola als Tescos meistverkauftes Menü-Getränk Nr. 1). Zwei rotierende Marken-Getränkeslots pro Quartal sind für den Einkauf eine neue kommerzielle Einnahmequelle, konservativ mit €0.30 pro Menü kalkuliert.',
+  s8_src:'COGS (Wareneinsatz): repräsentative Frische-/FTG-Kategoriemargen im bulgarischen modernen Handel; in Woche 1 des Projekts gegen die interne Kategorie-GuV zu validieren. Red Bull / Tesco: Clubcard Unpacked 2025, Express &amp; Star.',
+  s9_kicker:'Finanzprognose',
+  s9_h2:'Basisszenario: €8.3M Umsatz in Jahr 1, €10.7M im Regelbetrieb',
+  s9_ch_h:'Jahresumsatz nach Szenario (€M)',
+  s9_ch_cap:'Jahr 1 = 8 Pilotfilialen für 3 Monate, danach 71 Filialen für 9 Monate · Regelbetrieb = 71 Filialen, ganzjährig',
+  s9_th1:'Annahme',s9_th2:'Kons.',s9_th3:'Basis',s9_th4:'Amb.',
+  s9_r1:'Menüs / Filiale / Tag',
+  s9_r2:'= Anteil an ~3.000 Tageskunden',
+  s9_r3:'Ø-Bon (60% XTRA-Mix)',
+  s9_r4:'Menüs Jahr 1 (Mio.)',
+  s9_r5:'Umsatz Jahr 1 (€M)',
+  s9_r6:'Bruttogewinn Jahr 1 @33% (€M)',
+  s9_r7:'Bruttogewinn nach Kannibalisierung* (€M)',
+  s9_can_h:'Kannibalisierung wird modelliert, nicht ignoriert',
+  s9_can_p:'*Wir nehmen an, dass 45% der Menükäufer ohnehin etwas gekauft hätten (Ø €2.90 bei 30% Marge). Ihr bisheriger Bruttogewinn wird herausgerechnet. Trotzdem hebt das Menü einen Einzelartikel-Warenkorb von €2.90 auf ein Trio zu €4.19, sodass die Mechanik in jedem Szenario je Transaktion wertsteigernd ist.',
+  s9_src:'Tageskunden pro Filiale: ~1,5 Mio. wöchentlich ÷ 71 Filialen ÷ 7 Tage ≈ 3.000. Referenz: Tesco Irland ≈ 52 Freshways-Menüs/Filiale/Tag bei Teilsortiment; UK-Convenience-Formate liegen deutlich höher. Sensitivität: ±10 Menüs/Tag ≈ ±€1.07M Umsatz im Regelbetrieb.',
+  s10_kicker:'Sekundäreffekte',
+  s10_h2:'Das Menü ist auch ein Instrument für Frequenz, Daten und Margenmix',
+  s10_f_h:'Frequenz: der eigentliche Gewinn',
+  s10_f_p:'Mittagessen ist eine 5x/Woche-Mission; der große Wocheneinkauf ist 1x. Wandelt das Menü <b>3% der über 1 Mio. aktiven XTRA-Nutzer in +2 zusätzliche Filialbesuche pro Monat</b> um, und bringt jeder Zusatzbesuch nur €2 Umsatz außerhalb des Menüs, ergibt das <b>~€1.4M/Jahr zusätzlichen Halo-Umsatz</b> zusätzlich zum Menü selbst.',
+  s10_d_h:'Daten: Wochentagsverhalten, das wir nie sehen',
+  s10_d_p:'Die Kartenlücke von €0.50 verlagert Mittagstransaktionen auf XTRA. Jedes identifizierte Menü versorgt die bestehende KI-Coupon-Engine mit einer neuen Verhaltensdimension (Wochentag, Tageszeit, Essenspräferenz) und verbessert das Targeting der bereits produktiven 10 wöchentlichen personalisierten Coupons.',
+  s10_w_h:'Schwund: Menüs räumen frische Ware ab',
+  s10_w_p:'Die ToGo-Theke und die Bäckerei tragen das höchste Abschreibungsrisiko der Filiale. Ein planbares tägliches Menüvolumen glättet die Produktionsplanung und kann kurz haltbare Artikel in die Hauptgericht-Gruppe aufnehmen, wodurch der Frischeschwund in beiden Kategorien gezielt um <b>1–2 Prozentpunkte</b> sinkt.',
+  s10_ch_h:'Halo-Modell: Basisszenario, Regelbetrieb (€M / Jahr)',
+  s10_ch_cap:'Menü-Umsatz + Frequenz-Halo + Schwundersparnis, netto nach Kannibalisierung',
+  s10_src:'Halo-Rechnung: 1 Mio. MAU × 3% × 24 Zusatzbesuche/Jahr × €2 ≈ €1.44M. Schwund: BG-Referenzwerte für Frischeschwund liegen bei 3–6% der Kategorieumsätze; 1,5 Prozentpunkte auf ~€25M pilotrelevanten ToGo+Bäckerei-Umsatz ≈ €0.4M. Beide Werte werden als Pilot-KPI erfasst, bevor sie beansprucht werden.',
+  s11_kicker:'Systemintegration',
+  s11_h2:'Es ist eine Promotion, kein Produkt: Standard-SAP, null neue SKU',
+  s11_sub:'Das Menü bildet sich 1:1 auf das Mix-and-Match- / Bonus-Buy-Muster ab, das der SAP-Retail-Stack von Schwarz standardmäßig unterstützt. Komponenten behalten ihre EAN, ihren Bestand und ihre Kategorie-GuV.',
+  s11_f1_h:'Promotionsdefinition',
+  s11_f1_p:'Drei Komponentengruppen (Hauptgerichte / Bäckerei / Getränke) als Artikelhierarchien. Bonus Buy: „je 1 aus jeder Gruppe → €4.49“; kartengebundene Kondition €3.99. Verantwortet vom Einkauf, je Filialcluster.',
+  s11_a1:'Standardreplikation<br>(Angebots-/Promo-Services, IDoc – SAP-Datenaustauschformat)',
+  s11_f2_h:'Ausführung beim Scan',
+  s11_f2_p:'Die POS-Promotion-Engine erkennt das Trio im Warenkorb und passt den Preis automatisch an. Funktioniert identisch an besetzten Kassen und Selbstbedienungskassen. Keine Kassierer-Schulung nötig, nur Information.',
+  s11_a2:'Upload des TLOG (Transaktionsprotokoll je Kassenbon),<br>auf Belegebene',
+  s11_f3_h:'Datenhub &amp; Analytik',
+  s11_f3_p:'Attach-Rate auf Belegebene, Komponentenmix, Tageszeit, Kannibalisierung, Schwund. Der Rabatt wird anteilig auf die Komponenten verteilt und hält die Kategorie-GuV sauber. Liefert die Bedarfsprognose für die Bäckereiproduktion.',
+  s11_a3:'Segmente &amp;<br>Coupons',
+  s11_f4_h:'Loyalty-Ebene',
+  s11_f4_p:'Der Kartenpreis wird über die bestehende Loyalty-Preislogik angewendet; die KI-Coupon-Engine adressiert abgewanderte Mittagskunden und bewirbt die Premium-Stufe. Angebotsseite und Kombinationsinspiration in der App.',
+  s11_c1_h:'Warum null neue SKU wichtig ist',
+  s11_c1_p:'Keine neuen Artikelstammdaten, keine neuen Lieferketten, kein doppelter Bestand. Sortimentsänderungen bedeuten das Bearbeiten einer Gruppenliste, nicht die Neueinführung eines Produkts.',
+  s11_c2_h:'Saubere Margenbuchhaltung',
+  s11_c2_p:'Die anteilige Rabattzuordnung im Transaktionslog sorgt dafür, dass jede Kategorie (Frische, Bäckerei, Getränke) die tatsächliche Marge nach dem Menü ausweist. Keine GuV-Streitigkeiten zwischen Kategorie-Managern.',
+  s11_c3_h:'Passt zur IT-Roadmap von Schwarz',
+  s11_c3_p:'Schwarz IT betreibt bereits konzernweit GK POS und SAP CAR als Retail-Datenhub; die kanalübergreifende Preiskonsistenz für die App entsteht aus denselben Promotionsobjekten.',
+  s11_src:'Muster: SAP Retail Bonus Buy / Mix-and-Match mit Standard-Angebotsreplikation an GK POS („SAP Store Solutions by GK“, strategischer POS-Partner von SAP) und Belegupload an SAP CAR. Beziehung Schwarz IT / GK: Unternehmensmeldungen von GK Software; Retail Optimiser.',
+  s12_kicker:'Umsetzung',
+  s12_h2:'Acht Wochen bis zum Pilotstart, nur Konfiguration',
+  s12_th1:'Wochen',s12_th2:'Arbeitspaket',s12_th3:'Was wird gemacht',s12_th4:'Verantwortlich',
+  s12_w1:'Komponentengruppen',
+  s12_d1:'Zulässigkeitslisten für Hauptgerichte / Bäckerei / Getränke in der Artikelhierarchie festlegen; COGS je Artikel gegen die Kategorie-GuV validieren; Preisstufen fixieren.',
+  s12_o1:'Einkauf + Stammdaten',
+  s12_w2:'Promotionskonfiguration',
+  s12_d2:'Bonus-Buy-Einrichtung in S/4HANA Retail: Trio-Kondition €4.49 / Premium €5.99; kartengebundene XTRA-Preise; Gültigkeit und Filialcluster-Zuordnung.',
+  s12_o2:'Team Preisbildung',
+  s12_w3:'POS-Replikation &amp; Test',
+  s12_d3:'Angebote an die POS der 8 Pilotfilialen replizieren; Regressionstest: besetzte Kasse, Selbstbedienung, gemischte Warenkörbe, Rückgaben, Bonlayout mit ausgewiesener Ersparnis.',
+  s12_w4:'CAR-Dashboards',
+  s12_d4:'Attach-Rate, Menüs/Filiale/Tag, Komponentenmix, Heatmap nach Tageszeit, Kannibalisierungspanel, Frischeschwund-Tracker. Täglich aktualisiert, vorstandsreif.',
+  s12_w5:'App &amp; Loyalty',
+  s12_d5:'Menü-Kachel in der Kaufland-App, Anzeige des XTRA-Preises, Startcoupon (erstes Menü €2.99), Zielgruppe für die KI-Coupon-Engine.',
+  s12_o5:'Marketing + Schwarz IT Digital',
+  s12_w6:'Filialbetrieb',
+  s12_d6:'Nachbarschaftsplatzierung: Getränkekühler an der ToGo-Theke, Menüregal in der Bäckerei; einheitliche Beschilderung; Produktionsplan der Bäckerei für die Mittagsspitze; Mitarbeiterbriefing.',
+  s12_o6:'Store Ops (Pilotregion)',
+  s12_c1:'<b>Keine Individualentwicklung.</b> Jedes Element oben ist Konfiguration oder Inhalt auf bereits produktiven Systemen. Die einzige harte Abhängigkeit ist die Kapazität zur Angebotsreplikation im Pilotfenster, die in Woche 1 mit Schwarz IT abzustimmen ist.',
+  s12_c2:'<b style="color:var(--green)">Einmalige Kostenschätzung: ~€180k</b> (Beschilderung und Ausstattung ~€120k für 8 Filialen, Projektteam ~€60k). Amortisiert sich durch den Bruttogewinn des Basisszenarios in unter 6 Wochen bundesweitem Betrieb.',
+  s12_src:'Aufwandsschätzungen setzen den Standard-Change-Prozess von Schwarz IT voraus; im Projekt-Kick-off zu validieren. Ausstattungskosten: €15k/Filiale für Nachbarschaftsplatzierung und Beschilderung im Eingangsbereich, Pilot-Spezifikation.',
+  s13_kicker:'Risikominimierung',
+  s13_h2:'12-wöchiger Pilot in Sofia mit festen Gates, danach eine datenbasierte Rollout-Entscheidung',
+  s13_st1_h:'Wochen 1–8 · Aufbau',
+  s13_st1_p:'Konfiguration, Dashboards, Ausstattung in 8 Filialen in Sofia (Mix aus bürodichten und Wohngebieten für ein ehrliches Gesamtbild).',
+  s13_st2_h:'Wochen 9–20 · Live-Pilot',
+  s13_st2_p:'Tägliches CAR-Dashboard; wöchentlicher Handelsreview mit dem Einkauf; Preis- und Sortimentsanpassungen nur in Woche 12 und 16 erlaubt, um den Test sauber zu halten.',
+  s13_st3_h:'Woche 21 · Gate-Review',
+  s13_st3_p:'Go-/Tune-/Stop-Entscheidung anhand der KPI-Tabelle. Go = bundesweiter Rollout in 2 Wellen über 8 Wochen, ~35 Filialen pro Welle.',
+  s13_st4_h:'Monat 9 · Gesamtes Filialnetz',
+  s13_st4_p:'Alle 71 Filialen live; Premium-Stufe und Frühstücksfenster aktiviert; Ausschreibung der Getränke-Slots an Lieferanten für die nächsten zwei Quartale.',
+  s13_th1:'Pilot-KPI (Leistungskennzahl), gemessen in SAP CAR',s13_th2:'Rollout-Schwelle',
+  s13_k1:'Menüs pro Filiale und Tag, Ø Wochen 17–20',
+  s13_k2:'Gemischte Bruttomarge pro Menü',
+  s13_k3:'XTRA-Kartenanteil an Menü-Transaktionen',
+  s13_k4:'Netto-Bruttogewinn nach gemessener Kannibalisierung',
+  s13_k4n:'≥ €0.90 / Menü',
+  s13_k5:'Besuchsfrequenz der Menükäufer vs. Kontrollkohorte',
+  s13_k5n:'+0.3 Besuche / Monat',
+  s13_k6:'Schwund ToGo + Bäckerei vs. Basislinie vor dem Pilot',
+  s13_k6n:'≤ Basislinie',
+  s13_q_h:'Was der Pilot beantworten muss',
+  s13_q_p:'Die tatsächliche Attach-Rate in der bulgarischen Einkaufskultur, die richtige Lücke zwischen €3.99 und €4.49, die Verteilung Wochentag vs. Wochenende, und ob bürolagige Einzugsgebiete stark genug abschneiden, um ein differenziertes Sortiment zu rechtfertigen. Jede Frage ist einem Dashboard zugeordnet, nicht einer Meinung.',
+  s13_src:'Kontrollkohorte: vergleichbare XTRA-Nutzer in Nicht-Pilotfilialen in Sofia, erfasst über Loyalty-IDs in CAR. Kannibalisierung wird als Delta bei Einzelverkäufen von ToGo-/Bäckerei-/Getränkeeinheiten unter Menükäufern gegenüber ihrer eigenen 12-wöchigen Vorperiode gemessen.',
+  s14_kicker:'Entscheidung',
+  s14_h2:'Die Bitte: Genehmigen Sie den Piloten. Die Daten entscheiden den Rest.',
+  s14_a_h:'Genehmigung',
+  s14_a_p:'Pilot in 8 Filialen in Sofia, 12 Wochen live, ~€180k Einmalbudget, und ein Projektteam mit je einem Lead aus Einkauf, Preisbildung, Schwarz IT, BI und Store Ops.',
+  s14_g_h:'Sie erhalten',
+  s14_g_p:'Ein vorstandsreifes CAR-Dashboard ab Tag 1, einen Gate-Review in Woche 21 mit gemessener Attach-Rate, Marge, Frequenz und Kannibalisierung, sowie einen kalkulierten bundesweiten Rollout-Plan.',
+  s14_s_h:'Auf dem Spiel',
+  s14_s_p:'€10.7M Umsatz im Regelbetrieb, ~€2.6M Netto-Bruttogewinn inklusive Halo-Effekt, eine neue Lieferanten-Einnahmequelle, und das erste strukturierte Mittagsangebot im bulgarischen Lebensmittelhandel, bevor es ein anderer aufbaut.',
+  s14_close:'Kaufland besitzt bereits die ToGo-Theke, die Bäckerei, das Getränkeregal, die Loyalty-Engine und den SAP-Stack, der sie verbindet. Das Mittagsmenü ist kein neues Geschäft. <b style="color:#fff">Es ist ein Preissignal, das fünf bestehende Ressourcen wie eine einzige arbeiten lässt.</b>',
+  s14_src:'Kontakt: [Name der Präsentierenden] · Vorschlag v1.0 · August 2026 · Alle Prognosen vorbehaltlich der Pilotvalidierung.'
+};
 const BG={
   doc_title:'Kaufland България · Предложение за обяден комплект',
   s1_kicker:'Търговско предложение · Поверително',
@@ -897,6 +1105,13 @@ const BG={
   s14_close:'Kaufland вече притежава ToGo витрината, пекарната, реда с напитки, двигателя за лоялност и SAP стека, който ги свързва. Обядният комплект не е нов бизнес. <b style="color:#fff">Това е ценови сигнал, който кара пет съществуващи актива да работят като едно.</b>',
   s14_src:'Контакт: [име на презентиращия] · Предложение v1.0 · август 2026 · Всички проекции подлежат на валидиране от пилота.'
 };
+const TRANSLATIONS={de:DE,bg:BG};
+const NAV_LABELS={
+  en:{prev:'Previous',next:'Next'},
+  de:{prev:'Zurück',next:'Weiter'},
+  bg:{prev:'Назад',next:'Напред'}
+};
+const SUPPORTED_LANGS=new Set(['en','de','bg']);
 const originals=new WeakMap();
 let snapped=false;
 function snapCopy(){
@@ -907,31 +1122,30 @@ function snapCopy(){
 }
 function applyLang(lang){
   snapCopy();
-  const bg=lang==='bg';
-  document.documentElement.lang=bg?'bg':'en';
-  document.title=bg?BG.doc_title:'Kaufland Bulgaria · Meal Deal Proposal';
+  const copy=TRANSLATIONS[lang];
+  document.documentElement.lang=lang;
+  document.title=copy?copy.doc_title:'Kaufland Bulgaria · Meal Deal Proposal';
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key=el.getAttribute('data-i18n');
-    el.textContent=bg?(BG[key]??originals.get(el)):originals.get(el);
+    el.textContent=copy?(copy[key]??originals.get(el)):originals.get(el);
   });
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{
     const key=el.getAttribute('data-i18n-html');
-    el.innerHTML=bg?(BG[key]??originals.get(el)):originals.get(el);
+    el.innerHTML=copy?(copy[key]??originals.get(el)):originals.get(el);
   });
   document.querySelectorAll('[data-set-lang]').forEach(btn=>{
     const on=btn.getAttribute('data-set-lang')===lang;
     btn.classList.toggle('is-on',on);
     btn.setAttribute('aria-pressed',on?'true':'false');
   });
-  const prevLbl=bg?'Назад':'Previous';
-  const nextLbl=bg?'Напред':'Next';
+  const navLabels=NAV_LABELS[lang]??NAV_LABELS.en;
   const prevBtn=document.getElementById('prev');
   const nextBtn=document.getElementById('next');
-  prevBtn.title=prevLbl; prevBtn.setAttribute('aria-label',prevLbl);
-  nextBtn.title=nextLbl; nextBtn.setAttribute('aria-label',nextLbl);
+  prevBtn.title=navLabels.prev; prevBtn.setAttribute('aria-label',navLabels.prev);
+  nextBtn.title=navLabels.next; nextBtn.setAttribute('aria-label',navLabels.next);
   try{localStorage.setItem('kaufland-deck-lang',lang);}catch(e){/* ignore */}
   const url=new URL(location.href);
-  if(bg) url.searchParams.set('lang','bg'); else url.searchParams.delete('lang');
+  if(lang==='en') url.searchParams.delete('lang'); else url.searchParams.set('lang',lang);
   history.replaceState(null,'',url.pathname+url.search+url.hash);
   renderCharts(lang);
 }
@@ -972,28 +1186,68 @@ Chart.defaults.color='#3d4753';
 const RED='#E10915',INK='#12181f',GRAY='#9aa4b1',GREEN='#0e8a4d',BLUE='#1d5fbf',AMBER='#c47f00';
 const opts=(extra={})=>({responsive:false,animation:{duration:600},plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:12,boxHeight:12,padding:14,font:{weight:600}}},...(extra.plugins||{})},...extra});
 const chartObjs=[];
+const CHART_LABELS={
+  en:{
+    perStore:['Kaufland (71 stores)','Lidl (~134)','Billa (~140)'],
+    perStoreDs:'€M revenue / store',
+    wf:['Bought separately','Meal Deal','Meal Deal + XTRA'],
+    wfMain:'ToGo main',
+    wfBakery:'Bakery item',
+    wfDrink:'Drink 500ml',
+    wfDeal:'Deal price',
+    benchDs:'£ per meal deal, 2025',
+    unit:['Avg ticket','Component COGS','Supplier funding','Gross profit'],
+    unitDs:'€ per deal',
+    scen:['Conservative\n60 / day','Base\n100 / day','Ambitious\n150 / day'],
+    scenY1:'Year 1 (pilot + 9-month rollout)',
+    scenSS:'Steady state (71 stores, full year)',
+    halo:['Steady-state value, base case'],
+    halo1:'Deal gross profit, net of cannibalisation (€2.6M)',
+    halo2:'Frequency halo revenue @30% GP (€0.43M)',
+    halo3:'Fresh shrink reduction (€0.4M)'
+  },
+  de:{
+    perStore:['Kaufland (71 Filialen)','Lidl (~134)','Billa (~140)'],
+    perStoreDs:'€M Umsatz / Filiale',
+    wf:['Einzelkauf','Mittagsmenü','Mittagsmenü + XTRA'],
+    wfMain:'ToGo-Hauptgericht',
+    wfBakery:'Backware',
+    wfDrink:'Getränk 500 ml',
+    wfDeal:'Angebotspreis',
+    benchDs:'£ pro Mittagsmenü, 2025',
+    unit:['Ø-Bon','COGS der Komponenten','Kofinanzierung','Bruttogewinn'],
+    unitDs:'€ pro Menü',
+    scen:['Konservativ\n60 / Tag','Basis\n100 / Tag','Ambitioniert\n150 / Tag'],
+    scenY1:'Jahr 1 (Pilot + 9-monatiger Rollout)',
+    scenSS:'Regelbetrieb (71 Filialen, ganzjährig)',
+    halo:['Wert im Regelbetrieb, Basisszenario'],
+    halo1:'Bruttogewinn aus dem Menü, netto nach Kannibalisierung (€2.6M)',
+    halo2:'Frequenz-Halo-Umsatz @30% Bruttogewinn (€0.43M)',
+    halo3:'Reduzierung des Frischeschwunds (€0.4M)'
+  },
+  bg:{
+    perStore:['Kaufland (71 магазина)','Lidl (~134)','Billa (~140)'],
+    perStoreDs:'€M приход / магазин',
+    wf:['Поотделно','Обяден комплект','Комплект + XTRA'],
+    wfMain:'ToGo основно',
+    wfBakery:'Печиво',
+    wfDrink:'Напитка 500 мл',
+    wfDeal:'Цена на офертата',
+    benchDs:'£ на обяден комплект, 2025',
+    unit:['Среден билет','COGS на компоненти','Съфинансиране','Брутна печалба'],
+    unitDs:'€ на комплект',
+    scen:['Консервативен\n60 / ден','Базов\n100 / ден','Амбициозен\n150 / ден'],
+    scenY1:'Година 1 (пилот + 9 месеца разгръщане)',
+    scenSS:'Устойчиво ниво (71 магазина, цяла година)',
+    halo:['Стойност на устойчиво ниво, базов сценарий'],
+    halo1:'Брутна печалба от комплект, нетно от канибализация (€2.6M)',
+    halo2:'Честотен halo приход @30% БП (€0.43M)',
+    halo3:'Намаление на прясна фира (€0.4M)'
+  }
+};
 function renderCharts(lang){
-  const bg=lang==='bg';
   chartObjs.splice(0).forEach(c=>c.destroy());
-  const L={
-    perStore:bg?['Kaufland (71 магазина)','Lidl (~134)','Billa (~140)']:['Kaufland (71 stores)','Lidl (~134)','Billa (~140)'],
-    perStoreDs:bg?'€M приход / магазин':'€M revenue / store',
-    wf:bg?['Поотделно','Обяден комплект','Комплект + XTRA']:['Bought separately','Meal Deal','Meal Deal + XTRA'],
-    wfMain:bg?'ToGo основно':'ToGo main',
-    wfBakery:bg?'Печиво':'Bakery item',
-    wfDrink:bg?'Напитка 500 мл':'Drink 500ml',
-    wfDeal:bg?'Цена на офертата':'Deal price',
-    benchDs:bg?'£ на обяден комплект, 2025':'£ per meal deal, 2025',
-    unit:bg?['Среден билет','COGS на компоненти','Съфинансиране','Брутна печалба']:['Avg ticket','Component COGS','Supplier funding','Gross profit'],
-    unitDs:bg?'€ на комплект':'€ per deal',
-    scen:bg?['Консервативен\n60 / ден','Базов\n100 / ден','Амбициозен\n150 / ден']:['Conservative\n60 / day','Base\n100 / day','Ambitious\n150 / day'],
-    scenY1:bg?'Година 1 (пилот + 9 месеца разгръщане)':'Year 1 (pilot + 9-month rollout)',
-    scenSS:bg?'Устойчиво ниво (71 магазина, цяла година)':'Steady state (71 stores, full year)',
-    halo:bg?['Стойност на устойчиво ниво, базов сценарий']:['Steady-state value, base case'],
-    halo1:bg?'Брутна печалба от комплект, нетно от канибализация (€2.6M)':'Deal gross profit, net of cannibalisation (€2.6M)',
-    halo2:bg?'Честотен halo приход @30% БП (€0.43M)':'Frequency halo revenue @30% GP (€0.43M)',
-    halo3:bg?'Намаление на прясна фира (€0.4M)':'Fresh shrink reduction (€0.4M)'
-  };
+  const L=CHART_LABELS[lang]??CHART_LABELS.en;
 
   chartObjs.push(new Chart(chRace,{type:'bar',data:{
     labels:['FY2023','FY2024'],
@@ -1066,8 +1320,8 @@ function renderCharts(lang){
 
 const startLang=(()=>{
   const q=new URLSearchParams(location.search).get('lang');
-  if(q==='bg'||q==='en') return q;
-  try{const s=localStorage.getItem('kaufland-deck-lang'); if(s==='bg'||s==='en') return s;}catch(e){/* ignore */}
+  if(SUPPORTED_LANGS.has(q)) return q;
+  try{const s=localStorage.getItem('kaufland-deck-lang'); if(SUPPORTED_LANGS.has(s)) return s;}catch(e){/* ignore */}
   return 'en';
 })();
 applyLang(startLang);
