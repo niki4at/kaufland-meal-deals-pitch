@@ -40,9 +40,9 @@
   .dark .kicker{color:#ff5a63}
   h1{font-size:52px;font-weight:900;line-height:1.06;letter-spacing:-.02em}
   h2{font-size:34px;font-weight:800;line-height:1.12;letter-spacing:-.015em;margin-bottom:6px}
-  .sub{font-size:17px;color:var(--ink-3);font-weight:500;margin-bottom:22px}
+  .sub{font-size:17px;color:var(--ink-3);font-weight:500;margin-bottom:14px}
   .dark .sub{color:#9aa4b1}
-  .body{flex:1;min-height:0}
+  .body{flex:1;min-height:0;overflow:hidden}
 
   .grid{display:grid;gap:16px}
   .cols-2{grid-template-columns:1fr 1fr}
@@ -61,23 +61,24 @@
   .src{
     position:relative;
     flex:0 0 auto;
-    margin-top:10px;
-    padding-right:56px;
+    margin-top:8px;
+    padding:4px 56px 0 0;
     font-size:10.5px;
     color:#98a1ad;
     line-height:1.4;
     white-space:normal;
     overflow:visible;
     overflow-wrap:break-word;
-    z-index:2;
+    background:var(--bg);
+    z-index:3;
   }
-  .dark .src{color:#6b7480}
+  .dark .src{color:#6b7480;background:transparent}
   .pageno{position:absolute;bottom:26px;right:88px;font-size:12px;font-weight:700;color:#98a1ad}
 
   .tbl{width:100%;border-collapse:collapse;font-size:13.5px}
-  .tbl th{background:var(--ink);color:#fff;text-align:left;padding:9px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .tbl th{background:var(--ink);color:#fff;text-align:left;padding:7px 10px;font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
   .tbl th:first-child{border-radius:8px 0 0 0}.tbl th:last-child{border-radius:0 8px 0 0}
-  .tbl td{padding:8px 12px;border-bottom:1px solid var(--line);background:#fff;vertical-align:top;line-height:1.35}
+  .tbl td{padding:6px 10px;border-bottom:1px solid var(--line);background:#fff;vertical-align:top;line-height:1.3}
   .tbl tr:last-child td{border-bottom:none}
   .tbl .num{font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
 
@@ -151,11 +152,11 @@
   .step h4{font-size:14.5px;font-weight:800;margin-bottom:2px}
   .step p{font-size:12.5px;color:var(--ink-3);line-height:1.45}
 
-  .chart-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .chart-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-height:0;overflow:hidden}
   .chart-box h3{font-size:13.5px;font-weight:800;color:var(--ink-2);margin-bottom:4px}
   .chart-box .cap{font-size:11.5px;color:var(--ink-3);margin-bottom:8px}
 
-  .callout{background:#fff8f8;border:1.5px solid #f6c6c9;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.5}
+  .callout{background:#fff8f8;border:1.5px solid #f6c6c9;border-radius:12px;padding:12px 16px;font-size:13.5px;line-height:1.45}
   .callout b{color:var(--red)}
 
   kbd{background:#eef1f4;border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:11px;font-family:inherit;font-weight:700}
@@ -435,7 +436,7 @@
     <div class="chart-box">
       <h3 data-i18n="s7_ch_h">UK lunch meal deal price ladder (GBP, 2025)</h3>
       <div class="cap" data-i18n="s7_ch_cap">A 20-year-old mechanic still growing; Tesco repriced twice since 2022 with no volume loss reported</div>
-      <canvas id="chBench" width="520" height="270"></canvas>
+      <canvas id="chBench" width="520" height="240"></canvas>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="card">
@@ -468,7 +469,7 @@
     <div class="chart-box">
       <h3 data-i18n="s8_ch_h">Classic deal P&amp;L bridge (€ per deal, avg ticket €4.19)</h3>
       <div class="cap" data-i18n="s8_ch_cap">Assumes 60% of deals on XTRA price €3.99, 40% at €4.49</div>
-      <canvas id="chUnit" width="520" height="290"></canvas>
+      <canvas id="chUnit" width="520" height="240"></canvas>
     </div>
     <div>
       <table class="tbl">
@@ -480,7 +481,7 @@
         <tr><td data-i18n="s8_r5">Supplier co-funding (drinks slot)</td><td class="num"></td><td class="num good">−€0.30</td><td class="num"></td></tr>
         <tr><td><b data-i18n="s8_r6">Deal at €4.19 avg</b></td><td class="num"><b>€4.19</b></td><td class="num"><b>€2.80</b></td><td class="num accent"><b>33%</b></td></tr>
       </table>
-      <div class="callout" style="margin-top:14px" data-i18n-html="s8_callout">
+      <div class="callout" style="margin-top:10px" data-i18n-html="s8_callout">
         <b>Supplier funding is standard practice:</b> UK meal deal drink slots are auctioned to brands
         (Red Bull displaced Coca-Cola as Tesco's #1 deal drink in 2025). Two rotating branded drink slots per quarter
         are a new commercial income line for Purchasing, conservatively modelled at €0.30 per deal.
@@ -552,7 +553,7 @@
     <div class="chart-box">
       <h3 data-i18n="s10_ch_h">Halo model: base case, steady state (€M / year)</h3>
       <div class="cap" data-i18n="s10_ch_cap">Deal revenue + frequency halo + waste saving, net of cannibalisation</div>
-      <canvas id="chHalo" width="500" height="300"></canvas>
+      <canvas id="chHalo" width="500" height="260"></canvas>
     </div>
   </div>
   <div class="src" data-i18n="s10_src">Halo math: 1M MAU × 3% × 24 extra visits/yr × €2 ≈ €1.44M. Waste: BG fresh shrink benchmarks 3–6% of category sales; 1.5 p.p. on ~€25M ToGo+bakery pilot-relevant sales ≈ €0.4M. Both tracked as pilot KPIs before being claimed.</div>
