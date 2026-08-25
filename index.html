@@ -51,6 +51,10 @@
 
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
   .card h3{font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
+  .stack{display:flex;flex-direction:column;gap:8px;min-height:0;height:100%}
+  .stack .card{padding:11px 16px;flex:0 0 auto}
+  .stack .card h3{margin-bottom:4px}
+  .stack .card p{font-size:13px;line-height:1.4;margin-top:2px}
   .card .big{font-size:38px;font-weight:900;letter-spacing:-.02em;line-height:1}
   .card .big small{font-size:18px;font-weight:700;color:var(--ink-3)}
   .card p{font-size:13.5px;color:var(--ink-3);line-height:1.45;margin-top:6px}
@@ -432,27 +436,27 @@
 <section class="slide">
   <div class="kicker" data-i18n="s7_kicker">Evidence base</div>
   <h2 data-i18n="s7_h2">Meal deals are the most proven bundle mechanic in European grocery</h2>
-  <div class="body grid cols-2" style="margin-top:10px">
+  <div class="body grid cols-2">
     <div class="chart-box">
       <h3 data-i18n="s7_ch_h">UK lunch meal deal price ladder (GBP, 2025)</h3>
       <div class="cap" data-i18n="s7_ch_cap">A 20-year-old mechanic still growing; Tesco repriced twice since 2022 with no volume loss reported</div>
       <canvas id="chBench" width="520" height="240"></canvas>
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="stack">
       <div class="card">
         <h3 data-i18n="s7_vol_h">Volume proof</h3>
-        <p style="font-size:14px;color:var(--ink)" data-i18n-html="s7_vol_p"><b>Tesco Ireland sells 70,000+ meal deals weekly across 194 stores</b> through one supplier contract alone (Freshways, €15M/yr). Tesco UK's Clubcard data ranks the meal deal among its highest-frequency purchases; ~80% of shoppers transact identified.</p>
+        <p style="color:var(--ink)" data-i18n-html="s7_vol_p"><b>Tesco Ireland sells 70,000+ meal deals weekly across 194 stores</b> through one supplier contract alone (Freshways, €15M/yr). Tesco UK's Clubcard data ranks the meal deal among its highest-frequency purchases; ~80% of shoppers transact identified.</p>
       </div>
       <div class="card">
         <h3 data-i18n="s7_beh_h">Behavioural mechanics that transfer to Bulgaria</h3>
-        <p style="font-size:13.5px;color:var(--ink)" data-i18n-html="s7_beh_p">
+        <p style="color:var(--ink)" data-i18n-html="s7_beh_p">
         <b>1 · Attach:</b> a fixed trio price converts single-item buyers into 3-item baskets.<br>
         <b>2 · Habit:</b> one price, zero decision cost, daily repeatability; lunch is a 5x/week mission.<br>
         <b>3 · Identification:</b> a card-only price gap moves lunch traffic onto XTRA, feeding the AI coupon engine with weekday behaviour we currently never observe.</p>
       </div>
       <div class="card" style="background:#fff8f8;border-color:#f6c6c9">
         <h3 data-i18n="s7_win_h">Competitive window</h3>
-        <p style="font-size:13.5px;color:var(--ink)" data-i18n="s7_win_p">No Bulgarian grocer runs a structured cross-category meal deal today. Lidl's format has no service counters or hot zones to copy it at parity. First mover sets the reference price.</p>
+        <p style="color:var(--ink)" data-i18n="s7_win_p">No Bulgarian grocer runs a structured cross-category meal deal today. Lidl's format has no service counters or hot zones to copy it at parity. First mover sets the reference price.</p>
       </div>
     </div>
   </div>
@@ -529,23 +533,23 @@
 <section class="slide">
   <div class="kicker" data-i18n="s10_kicker">Second-order effects</div>
   <h2 data-i18n="s10_h2">The deal is also a traffic, data and margin-mix instrument</h2>
-  <div class="body grid cols-2" style="margin-top:10px">
-    <div style="display:flex;flex-direction:column;gap:14px">
+  <div class="body grid cols-2">
+    <div class="stack">
       <div class="card">
         <h3 data-i18n="s10_f_h">Frequency: the real prize</h3>
-        <p style="font-size:14px;color:var(--ink)" data-i18n-html="s10_f_p">Lunch is a 5x/week mission; a weekly big shop is 1x. If the deal converts
+        <p style="color:var(--ink)" data-i18n-html="s10_f_p">Lunch is a 5x/week mission; a weekly big shop is 1x. If the deal converts
         <b>3% of the 1M+ active XTRA users into +2 extra store visits per month</b>, and each extra visit carries just €2 of
         non-deal spend, that is <b>~€1.4M/year of additional halo revenue</b> on top of the deal itself.</p>
       </div>
       <div class="card">
         <h3 data-i18n="s10_d_h">Data: weekday behaviour we never see</h3>
-        <p style="font-size:14px;color:var(--ink)" data-i18n="s10_d_p">The €0.50 card gap pushes lunch transactions onto XTRA. Every identified deal
+        <p style="color:var(--ink)" data-i18n="s10_d_p">The €0.50 card gap pushes lunch transactions onto XTRA. Every identified deal
         feeds the existing AI coupon engine with a new behavioural dimension (weekday, time-of-day, meal preference),
         improving targeting of the 10 weekly personalised coupons already in production.</p>
       </div>
       <div class="card">
         <h3 data-i18n="s10_w_h">Waste: bundles clear fresh stock</h3>
-        <p style="font-size:14px;color:var(--ink)" data-i18n-html="s10_w_p">The ToGo counter and bakery carry the store's highest write-off risk. A predictable
+        <p style="color:var(--ink)" data-i18n-html="s10_w_p">The ToGo counter and bakery carry the store's highest write-off risk. A predictable
         daily deal volume smooths production planning and can absorb short-dated items into the mains group, cutting fresh
         shrink by a targeted <b>1–2 p.p.</b> in the two categories.</p>
       </div>
