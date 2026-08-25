@@ -28,7 +28,7 @@
   .slide{
     width:1280px;height:720px;position:absolute;top:0;left:0;
     background:var(--bg);color:var(--ink);
-    padding:56px 88px 64px;
+    padding:56px 88px 22px;
     opacity:0;visibility:hidden;transition:opacity .35s ease;
     transform-origin:top left;
     display:flex;flex-direction:column;
@@ -42,7 +42,7 @@
   h2{font-size:34px;font-weight:800;line-height:1.12;letter-spacing:-.015em;margin-bottom:6px}
   .sub{font-size:17px;color:var(--ink-3);font-weight:500;margin-bottom:22px}
   .dark .sub{color:#9aa4b1}
-  .body{flex:1;min-height:0}
+  .body{flex:1;min-height:0;overflow:hidden}
 
   .grid{display:grid;gap:16px}
   .cols-2{grid-template-columns:1fr 1fr}
@@ -58,9 +58,21 @@
   .good{color:var(--green)}
   .warn{color:var(--amber)}
 
-  .src{position:absolute;bottom:26px;left:88px;right:220px;font-size:10.5px;color:#98a1ad;line-height:1.4}
+  .src{
+    position:relative;
+    flex:0 0 auto;
+    margin-top:10px;
+    padding-right:56px;
+    font-size:10.5px;
+    color:#98a1ad;
+    line-height:1.4;
+    white-space:normal;
+    overflow:visible;
+    overflow-wrap:break-word;
+    z-index:2;
+  }
   .dark .src{color:#6b7480}
-  .pageno{position:absolute;bottom:24px;right:88px;font-size:12px;font-weight:700;color:#98a1ad}
+  .pageno{position:absolute;bottom:22px;right:88px;font-size:12px;font-weight:700;color:#98a1ad}
 
   .tbl{width:100%;border-collapse:collapse;font-size:13.5px}
   .tbl th{background:var(--ink);color:#fff;text-align:left;padding:9px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
@@ -105,7 +117,7 @@
   #bar{position:fixed;top:0;left:0;height:4px;background:var(--red);z-index:60;transition:width .3s ease}
 
   /* title slide */
-  .title-wrap{display:flex;flex-direction:column;justify-content:center;height:100%}
+  .title-wrap{display:flex;flex-direction:column;justify-content:center;flex:1;min-height:0}
   .logo-k{display:inline-flex;align-items:center}
   .logo-k .kl-logo{height:52px;width:auto;display:block}
   .title-meta{display:flex;gap:44px;margin-top:44px}
@@ -1157,9 +1169,10 @@ document.querySelectorAll('[data-set-lang]').forEach(btn=>{
 const slides=[...document.querySelectorAll('.slide')];
 let cur=0;
 function fit(){
-  const s=innerWidth/1280;
+  const s=Math.min(innerWidth/1280,innerHeight/720);
+  const x=(innerWidth-1280*s)/2;
   const y=(innerHeight-720*s)/2;
-  slides.forEach(sl=>sl.style.transform=`translate(0px,${y}px) scale(${s})`);
+  slides.forEach(sl=>sl.style.transform=`translate(${x}px,${y}px) scale(${s})`);
 }
 function show(i){
   cur=Math.max(0,Math.min(slides.length-1,i));
