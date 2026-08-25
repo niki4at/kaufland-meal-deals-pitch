@@ -30,7 +30,7 @@
 - Consumes: `index.html`
 - Produces: a zero-dependency command that exits nonzero when German locale coverage or English fallback behavior is missing.
 
-- [ ] **Step 1: Write the static contract checker**
+- [x] **Step 1: Write the static contract checker**
 
 Create `scripts/check-i18n.mjs` using `node:assert/strict`, `node:fs`, and `node:vm`. Extract `BG` and `DE` object literals from `index.html`, evaluate them in an empty VM context, and assert:
 
@@ -50,7 +50,7 @@ assert.match(DE.s8_src, /COGS \(Wareneinsatz\)/);
 
 The checker must also collect every `data-i18n` and `data-i18n-html` key from the markup and assert each key exists in both `BG` and `DE`.
 
-- [ ] **Step 2: Run the checker and confirm the expected failure**
+- [x] **Step 2: Run the checker and confirm the expected failure**
 
 Run:
 
@@ -74,7 +74,7 @@ Expected: nonzero exit because `const DE`, the `DE` toggle, and German locale ha
 - Consumes: `applyLang(lang)` calls with `en`, `de`, or `bg`.
 - Produces: `DE`, `TRANSLATIONS`, `NAV_LABELS`, and `SUPPORTED_LANGS`; localized DOM, charts, URL, page title, and navigation labels.
 
-- [ ] **Step 1: Add the German language button**
+- [x] **Step 1: Add the German language button**
 
 Change the control label to `EN / DE / BG` and add:
 
@@ -84,7 +84,7 @@ Change the control label to `EN / DE / BG` and add:
 
 between English and Bulgarian.
 
-- [ ] **Step 2: Add the complete German dictionary**
+- [x] **Step 2: Add the complete German dictionary**
 
 Add `const DE={...};` before `const BG`. It must contain every key in `BG`, including `doc_title`, and translate all 14 slides, sources, labels, and HTML-rich copy.
 
@@ -103,7 +103,7 @@ s13_th1:'Pilot-KPI (Leistungskennzahlen, gemessen in SAP CAR)'
 
 Keep proper nouns and product names unchanged. Explain `IDoc` and `TLOG` in the system-integration slide.
 
-- [ ] **Step 3: Generalize locale selection**
+- [x] **Step 3: Generalize locale selection**
 
 Introduce:
 
@@ -119,15 +119,15 @@ const SUPPORTED_LANGS=new Set(['en','de','bg']);
 
 Update `applyLang` to select `const copy=TRANSLATIONS[lang]`, use original DOM content when `copy` is absent, set `document.documentElement.lang=lang`, update the title and arrow labels, and keep the URL free of `lang` only for English.
 
-- [ ] **Step 4: Add German chart labels**
+- [x] **Step 4: Add German chart labels**
 
 Replace Boolean Bulgarian chart branching with locale-specific chart dictionaries. German labels must cover every current chart string, including store counts, price waterfall, unit economics, scenarios, and halo effects.
 
-- [ ] **Step 5: Extend startup locale validation**
+- [x] **Step 5: Extend startup locale validation**
 
 Accept query-string or saved values only when `SUPPORTED_LANGS.has(value)`. Return `en` when neither value is supported.
 
-- [ ] **Step 6: Run the localization contract check**
+- [x] **Step 6: Run the localization contract check**
 
 Run:
 
@@ -137,7 +137,7 @@ node scripts/check-i18n.mjs
 
 Expected: `German localization contract passed.`
 
-- [ ] **Step 7: Run syntax and diff checks**
+- [x] **Step 7: Run syntax and diff checks**
 
 Run:
 
@@ -148,7 +148,7 @@ git diff --check
 
 Expected: both commands exit 0.
 
-- [ ] **Step 8: Commit the locale feature**
+- [x] **Step 8: Commit the locale feature**
 
 ```bash
 git add index.html scripts/check-i18n.mjs
@@ -168,11 +168,11 @@ git push -u origin cursor/german-translation-6adf
 - Consumes: the three-language runtime from Task 2.
 - Produces: accurate usage instructions and checked-off execution record.
 
-- [ ] **Step 1: Update usage documentation**
+- [x] **Step 1: Update usage documentation**
 
 Document `EN / DE / БГ`, `?lang=de`, and `?lang=bg`, while stating English is the default.
 
-- [ ] **Step 2: Run final checks**
+- [x] **Step 2: Run final checks**
 
 Run:
 
