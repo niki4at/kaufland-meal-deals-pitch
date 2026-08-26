@@ -125,7 +125,15 @@
   .title-wrap{display:flex;flex-direction:column;justify-content:center;flex:1;min-height:0}
   .logo-k{display:inline-flex;align-items:center}
   .logo-k .kl-logo{height:52px;width:auto;display:block}
-  .title-meta{display:flex;gap:44px;margin-top:44px}
+  .title-meta{display:flex;gap:36px;margin-top:44px}
+  .title-meta a{color:inherit;text-decoration:none}
+  .title-meta a:hover{color:#fff}
+  .who{margin-top:20px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);max-width:820px}
+  .who-name{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .who-name b{color:#fff;font-size:16px;font-weight:800}
+  .who-name a{color:#9aa4b1;font-size:14px;text-decoration:none}
+  .who-name a:hover{color:#fff}
+  .who p{font-size:13.5px;color:#9aa4b1;line-height:1.45;margin-top:6px}
   .title-meta div{font-size:13px;color:#9aa4b1;line-height:1.6}
   .title-meta b{display:block;color:#fff;font-size:15px}
 
@@ -212,6 +220,7 @@
       <div><b data-i18n="s1_for">Prepared for</b><span data-i18n-html="s1_for_val">Stephan Lüger · Commercial Director,<br>Member of the Management Board</span></div>
       <div><b data-i18n="s1_scope">Scope</b><span data-i18n-html="s1_scope_val">71 hypermarkets · 35 cities<br>~1.5M customers weekly</span></div>
       <div><b data-i18n="s1_base">Base-case Year 1</b><span data-i18n-html="s1_base_val">€8.3M revenue · €2.8M gross profit<br>12-week pilot before rollout</span></div>
+      <div><b data-i18n="s1_by">Prepared by</b><span data-i18n-html="s1_by_val">Nikolay Ganozov<br><a href="mailto:n.ganozov@gmail.com">n.ganozov@gmail.com</a></span></div>
     </div>
   </div>
   <div class="src" data-i18n-html="s1_src">Navigate with <span style="color:#9aa4b1">←  →</span> arrow keys. All monetary figures in EUR unless stated. Sources cited per slide.</div>
@@ -689,11 +698,18 @@
       a new supplier income line, and the first structured lunch offer in Bulgarian grocery, before anyone else builds one.</p>
     </div>
   </div>
-  <div style="margin-top:34px;font-size:16px;color:#b9c1cc;line-height:1.6;max-width:900px" data-i18n-html="s14_close">
+  <div style="margin-top:22px;font-size:16px;color:#b9c1cc;line-height:1.6;max-width:900px" data-i18n-html="s14_close">
     Kaufland already owns the ToGo counter, the bakery, the drinks aisle, the loyalty engine and the SAP stack to connect them.
     The meal deal is not a new business. <b style="color:#fff">It is a price signal that makes five existing assets work as one.</b>
   </div>
-  <div class="src" data-i18n="s14_src">Contact: Nikolay Ganozov · Proposal v1.0 · August 2026 · All projections subject to pilot validation.</div>
+  <div class="who">
+    <div class="who-name">
+      <b>Nikolay Ganozov</b>
+      <a href="mailto:n.ganozov@gmail.com">n.ganozov@gmail.com</a>
+    </div>
+    <p data-i18n="s14_who">UCL First Class Honours alumnus in Emerging Digital Technologies. R&amp;D software engineer at a fintech blockchain company in London.</p>
+  </div>
+  <div class="src" data-i18n="s14_src">Proposal v1.0 · August 2026 · All projections subject to pilot validation.</div>
   <div class="pageno">14 / 14</div>
 </section>
 
@@ -719,6 +735,8 @@ const DE={
   s1_scope_val:'71 Hypermärkte · 35 Städte<br>~1,5 Mio. Kunden pro Woche',
   s1_base:'Basisszenario, Jahr 1',
   s1_base_val:'€8.3M Umsatz · €2.8M Bruttogewinn<br>12-wöchiger Pilot vor dem Rollout',
+  s1_by:'Erstellt von',
+  s1_by_val:'Nikolay Ganozov<br><a href="mailto:n.ganozov@gmail.com">n.ganozov@gmail.com</a>',
   s1_src:'Navigation mit den Pfeiltasten <span style="color:#9aa4b1">←  →</span>. Alle Beträge in EUR, sofern nicht anders angegeben. Quellen pro Folie angegeben.',
   s2_kicker:'Zusammenfassung',
   s2_h2:'Der Vorschlag in vier Zahlen',
@@ -913,7 +931,8 @@ const DE={
   s14_s_h:'Auf dem Spiel',
   s14_s_p:'€10.7M Umsatz im Regelbetrieb, ~€2.6M Netto-Bruttogewinn inklusive Halo-Effekt, eine neue Lieferanten-Einnahmequelle, und das erste strukturierte Mittagsangebot im bulgarischen Lebensmittelhandel, bevor es ein anderer aufbaut.',
   s14_close:'Kaufland besitzt bereits die ToGo-Theke, die Bäckerei, das Getränkeregal, die Loyalty-Engine und den SAP-Stack, der sie verbindet. Das Mittagsmenü ist kein neues Geschäft. <b style="color:#fff">Es ist ein Preissignal, das fünf bestehende Ressourcen wie eine einzige arbeiten lässt.</b>',
-  s14_src:'Kontakt: Nikolay Ganozov · Vorschlag v1.0 · August 2026 · Alle Prognosen vorbehaltlich der Pilotvalidierung.'
+  s14_who:'UCL-Absolvent mit First Class Honours in Emerging Digital Technologies. R&D-Softwareingenieur bei einem Fintech-Blockchain-Unternehmen in London.',
+  s14_src:'Vorschlag v1.0 · August 2026 · Alle Prognosen vorbehaltlich der Pilotvalidierung.'
 };
 const BG={
   doc_title:'Kaufland България · Предложение за обяден комплект',
@@ -926,6 +945,8 @@ const BG={
   s1_scope_val:'71 хипермаркета · 35 града<br>~1,5 млн. клиенти седмично',
   s1_base:'Базов сценарий, година 1',
   s1_base_val:'€8.3M приход · €2.8M брутна печалба<br>12-седмичен пилот преди разгръщане',
+  s1_by:'Подготвено от',
+  s1_by_val:'Nikolay Ganozov<br><a href="mailto:n.ganozov@gmail.com">n.ganozov@gmail.com</a>',
   s1_src:'Навигация със стрелки <span style="color:#9aa4b1">←  →</span>. Всички суми са в евро, освен ако не е посочено друго. Източниците са към всеки слайд.',
   s2_kicker:'Резюме',
   s2_h2:'Предложението в четири числа',
@@ -1120,7 +1141,8 @@ const BG={
   s14_s_h:'На карта',
   s14_s_p:'€10.7M приход на устойчиво ниво, ~€2.6M нетна брутна печалба с halo, нова приходна линия от доставчици и първата структурирана обядна оферта в българския ритейл, преди някой друг да я изгради.',
   s14_close:'Kaufland вече притежава ToGo витрината, пекарната, реда с напитки, двигателя за лоялност и SAP стека, който ги свързва. Обядният комплект не е нов бизнес. <b style="color:#fff">Това е ценови сигнал, който кара пет съществуващи актива да работят като едно.</b>',
-  s14_src:'Контакт: Nikolay Ganozov · Предложение v1.0 · август 2026 · Всички проекции подлежат на валидиране от пилота.'
+  s14_who:'Възпитаник на UCL с First Class Honours по Emerging Digital Technologies. R&D софтуерен инженер във финтех блокчейн компания в Лондон.',
+  s14_src:'Предложение v1.0 · август 2026 · Всички проекции подлежат на валидиране от пилота.'
 };
 const TRANSLATIONS={de:DE,bg:BG};
 const NAV_LABELS={
